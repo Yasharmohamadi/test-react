@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
 	return (
 		<header className="App-header">
-			<p>Hello React !</p>
+			<h1>Hello React !</h1>
 		</header>
 	);
 }
