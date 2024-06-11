@@ -2,7 +2,10 @@ import './Main.css'
 
 function Main () {
     return (
-        <h1 className="title">React Course</h1>
+        <div className='container'>
+            <h1 className="title">React Course</h1>
+            <img className='img' src='logo512.png' />
+        </div>
     )
 }
 

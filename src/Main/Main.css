@@ -1,20 +1,28 @@
-
-
-.title {
-    color: #fff;
-    border-bottom: 6px solid #fff;
-    border-top: 6px solid #fff;
-    border-radius: 10rem;
-    font-size: 5rem;
-    text-align: center;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    cursor: pointer;
-    transition: all 0.1s ease-out;
-    text-shadow: 0 0 50px #fff;  
-    background: #0b5183;
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
-.title:hover {
-    text-shadow: 0 0 50px #000;
+.title {
+	color: #fff;
+	font-size: 3rem;
+	text-align: center;
+	padding: 1rem 3rem;
+	color: #60dafa;
+}
+
+.img {
+	width: 10rem;
+	padding: 2rem;
+}
+
+.img,
+.title {
+	border-bottom: 6px solid #60dafa;
+	border-top: 6px solid #60dafa;
+	border-radius: 10rem;
+	background: #0b5183;
+	cursor: pointer;
 }
