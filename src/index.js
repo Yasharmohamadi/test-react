@@ -1,10 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import Main from './Main/Main';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <Main />
+
+// FIRST WAY TO USE REACT
+ReactDOM.render(
+    <Main />,
+    document.getElementById('root')
 );
 
+// SECOND WAY TO USE REACT
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//     <Main />
+// );
