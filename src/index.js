@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './Main/Main';
+import Main from './Main/Main'
 
 
 // FIRST WAY TO USE REACT

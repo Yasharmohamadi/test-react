@@ -1,12 +1,11 @@
-import './Main.css'
+import Users from '../Users/Users'
 
-function Main () {
+export default function Main () {
     return (
-        <div className='container'>
-            <h1 className="title">React Course</h1>
-            <img className='img' src='logo512.png' />
+        <div>
+            <Users color="red"/>
+            <Users color="blue"/>
+            <Users color="pink"/>
         </div>
     )
 }
-
-export default Main
