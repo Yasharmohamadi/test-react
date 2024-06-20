@@ -10,10 +10,10 @@ import React from "react";
 
 
 // set new name for props name in functional component
-// export default function Users ({id, name: color}) {   
+// export default function Users ({id, name: username}) {   
 
 // set default value for props in functional component
-// export default function Users(id = 3, name = 'Color') {  
+// export default function Users(id = 3, name = 'User') {  
 
 // export default function Users(props) {
 //     // let {id, name} = props; // store props value in this obj
@@ -27,7 +27,7 @@ import React from "react";
 // set default value for props in functional component
 // Users.defaultProps = { 
 //     id: 3,
-//     name: 'Color'
+//     name: 'User'
 // }
 
 
@@ -38,7 +38,7 @@ import React from "react";
 
 // create  component with class
 export default class Users extends React.Component {
-	render() {
+	render(name = 'User') {
 		return (
 			<div>
 				<h1>
@@ -49,3 +49,8 @@ export default class Users extends React.Component {
 	}	
 }
 
+// set default value for props in class component
+Users.defaultProps = { 
+    id: 3,
+    name: 'User'
+}

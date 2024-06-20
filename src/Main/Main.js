@@ -2,9 +2,9 @@ import Users from '../Users/Users'
 
 export default function Main () {
     let users = [
-        {id: 1, name: 'Yashar',},
-        {id: 2, name: 'Mojtaba',},
-        {id: 3, name: 'Arshia',}
+        {id: 1, name: 'Jack',},
+        {id: 2, name: 'John',},
+        {id: 3, name: '',}
     ]
     return (
         <div>
@@ -12,7 +12,7 @@ export default function Main () {
             <Users {...users[1]}>
                 <span>(Child)</span>
             </Users>
-            <Users {...users[2]}/>
+            <Users/>
         </div>
     )
 }
