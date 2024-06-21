@@ -42,18 +42,23 @@ export default class Main extends React.Component {
 		// }, 1500);
 	}
 
-	clickHandler() {
-		// alert("Clicked !");
-        console.log(this);
+	changeUsersHandler() {
+		this.setState({
+			users: [
+				{ id: 1, name: "Tom" },
+				{ id: 2, name: "Donald" },
+				{ id: 3, name: "Winston" },
+			],
+		});
 	}
 
 	render() {
 		return (
 			<div>
 				{/* <button onClick={() => this.clickHandler()}> */}
-				<button onClick={this.clickHandler.bind(this)}>
-                    <h2>Click Here</h2>
-                </button>
+				<button onClick={this.changeUsersHandler.bind(this)}>
+					<h2>Click to change users</h2>
+				</button>
 				<Users {...this.state.users[0]} />
 				<Users {...this.state.users[1]} />
 				<Users {...this.state.users[2]} />
