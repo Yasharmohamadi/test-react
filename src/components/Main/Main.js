@@ -43,13 +43,15 @@ export default class Main extends React.Component {
 	}
 
 	clickHandler() {
-		alert("Clicked !");
+		// alert("Clicked !");
+        console.log(this);
 	}
 
 	render() {
 		return (
 			<div>
-				<button onClick={this.clickHandler}>
+				{/* <button onClick={() => this.clickHandler()}> */}
+				<button onClick={this.clickHandler.bind(this)}>
                     <h2>Click Here</h2>
                 </button>
 				<Users {...this.state.users[0]} />
