@@ -29,6 +29,7 @@ export default class Main extends React.Component {
 				{ id: 2, name: "Joseph" },
 				{ id: 3, name: "Isaac" },
 			],
+            count: 0
 		};
 
 		// setTimeout(() => {
@@ -51,14 +52,26 @@ export default class Main extends React.Component {
 			],
 		});
 	}
+    
+    changeCounterValue () {
+        this.setState((prevState) => {
+            return {count: prevState.count + 1};
+        });
+
+    }
 
 	render() {
 		return (
 			<div>
 				{/* <button onClick={() => this.clickHandler()}> */}
 				<button onClick={this.changeUsersHandler.bind(this)}>
-					<h2>Click to change users</h2>
+					<h2>Change Usernames</h2>
 				</button>
+
+				<button onClick={this.changeCounterValue.bind(this)}>
+					<h2>{this.state.count}</h2>
+				</button>
+
 				<Users {...this.state.users[0]} />
 				<Users {...this.state.users[1]} />
 				<Users {...this.state.users[2]} />
