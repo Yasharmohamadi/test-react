@@ -63,9 +63,9 @@ export default class Main extends React.Component {
 	render() {
 		return (
 			<div>
+
 				{/* <button onClick={() => this.clickHandler()}> */}
 				<button onClick={this.changeUsersHandler.bind(this)}>
-					<h2>Change Usernames</h2>
 				</button>
 
 				<button onClick={this.changeCounterValue.bind(this)}>
@@ -79,3 +79,30 @@ export default class Main extends React.Component {
 		);
 	}
 }
+
+/////////////////////// counter project ////////////////////
+//     adderHandler() {
+//         this.setState((prevState) => {
+//             return {count: prevState.count + 1}
+//         })
+//     }
+
+
+
+//     lowerHandler() {
+//         this.setState((prevState) => {
+//             return {count: prevState.count - 1}
+//         })
+//     }
+
+// 	render() {
+// 		return (
+// 			<div>
+//                 <h2>{this.state.count}</h2>
+
+//                 <button onClick={this.adderHandler.bind(this)}>+</button>
+//                 <button onClick={this.lowerHandler.bind(this)}>-</button>
+// 			</div>
+// 		);
+// 	}
+// }
