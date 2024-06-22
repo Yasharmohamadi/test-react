@@ -31,6 +31,8 @@ export default class Main extends React.Component {
 			],
 			count: 0,
 		};
+
+		this.changeUsersHandler = this.changeUsersHandler.bind(this)
 	}
 
 	changeUsersHandler() {
@@ -64,20 +66,22 @@ export default class Main extends React.Component {
 
 				<hr />
 				<hr />
-
-				<button onClick={this.changeUsersHandler.bind(this)}>
-					<h3>Change Usernames</h3>
+				{/* first way for send input to function */}
+				<button onClick={this.changeUsersHandler}>
+					<h3>Change Names</h3>
 				</button>
 
 				<hr />
 				<hr />
 
-				<button onClick={this.lowerHandler.bind(this)}>
+				{/* second way for send input to function */}
+				<button onClick={() => this.lowerHandler()}>
 					<h3>-</h3>
 				</button>
 				<button>
 					<h3>{this.state.count}</h3>
 				</button>
+				{/* third way for send input to function */}
 				<button onClick={this.adderHandler.bind(this)}>
 					<h3>+</h3>
 				</button>
