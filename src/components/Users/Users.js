@@ -16,7 +16,7 @@ export default function Users(props) {
     // let {id, name} = props; // store props value in this obj
 	return (
 		<div>
-			<h1>{props.id}. {props.name} {props.children}</h1>
+			<h3>{props.id}. {props.name} {props.children}</h3>
 		</div>
 	);
 }

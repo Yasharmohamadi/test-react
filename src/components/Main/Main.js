@@ -29,18 +29,8 @@ export default class Main extends React.Component {
 				{ id: 2, name: "Joseph" },
 				{ id: 3, name: "Isaac" },
 			],
-            count: 0
+			count: 0,
 		};
-
-		// setTimeout(() => {
-		//     this.setState({
-		//         users: [
-		//             { id: 1, name: "Tom" },
-		//             { id: 2, name: "Donald" },
-		//             { id: 3, name: "Winston" },
-		//         ],
-		//     });
-		// }, 1500);
 	}
 
 	changeUsersHandler() {
@@ -52,57 +42,49 @@ export default class Main extends React.Component {
 			],
 		});
 	}
-    
-    changeCounterValue () {
-        this.setState((prevState) => {
-            return {count: prevState.count + 1};
-        });
 
-    }
+	adderHandler() {
+		this.setState((prevState) => {
+			return { count: prevState.count + 1 };
+		});
+	}
+
+	lowerHandler() {
+		this.setState((prevState) => {
+			return { count: prevState.count - 1 };
+		});
+	}
 
 	render() {
 		return (
 			<div>
-
-				{/* <button onClick={() => this.clickHandler()}> */}
-				<button onClick={this.changeUsersHandler.bind(this)}>
-				</button>
-
-				<button onClick={this.changeCounterValue.bind(this)}>
-					<h2>{this.state.count}</h2>
-				</button>
-
 				<Users {...this.state.users[0]} />
 				<Users {...this.state.users[1]} />
 				<Users {...this.state.users[2]} />
+
+				<hr />
+				<hr />
+
+				<button onClick={this.changeUsersHandler.bind(this)}>
+					<h3>Change Usernames</h3>
+				</button>
+
+				<hr />
+				<hr />
+
+				<button onClick={this.lowerHandler.bind(this)}>
+					<h3>-</h3>
+				</button>
+				<button>
+					<h3>{this.state.count}</h3>
+				</button>
+				<button onClick={this.adderHandler.bind(this)}>
+					<h3>+</h3>
+				</button>
+
+				<hr />
+				<hr />
 			</div>
 		);
 	}
 }
-
-/////////////////////// counter project ////////////////////
-//     adderHandler() {
-//         this.setState((prevState) => {
-//             return {count: prevState.count + 1}
-//         })
-//     }
-
-
-
-//     lowerHandler() {
-//         this.setState((prevState) => {
-//             return {count: prevState.count - 1}
-//         })
-//     }
-
-// 	render() {
-// 		return (
-// 			<div>
-//                 <h2>{this.state.count}</h2>
-
-//                 <button onClick={this.adderHandler.bind(this)}>+</button>
-//                 <button onClick={this.lowerHandler.bind(this)}>-</button>
-// 			</div>
-// 		);
-// 	}
-// }
