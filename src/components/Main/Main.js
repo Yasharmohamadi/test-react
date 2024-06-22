@@ -18,7 +18,7 @@ import React from "react";
 //     )
 // }
 
-// work with class and state
+// *** work with class and state
 export default class Main extends React.Component {
 	constructor(props) {
 		super(props);
