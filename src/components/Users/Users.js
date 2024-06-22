@@ -13,19 +13,21 @@ import React from "react";
 // export default function Users(id = 3, name = 'User') {
 
 export default function Users(props) {
-    // let {id, name} = props; // store props value in this obj
+	// let {id, name} = props; // store props value in this obj
 	return (
 		<div>
-			<h3>{props.id}. {props.name} {props.children}</h3>
+			<h3>
+				{props.id}. {props.name} {props.children}
+			</h3>
 		</div>
 	);
 }
 
 // *** set default value for props in functional component
 Users.defaultProps = {
-    id: '?',
-    name: 'User'
-}
+	id: "?",
+	name: "User",
+};
 
 /*  
 ========== CLASS COMPONENTS ===========
