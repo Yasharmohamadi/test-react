@@ -51,10 +51,14 @@ export default class Main extends React.Component {
 		});
 	}
 
-	lowerHandler() {
+	lowerHandler(event) {
 		this.setState((prevState) => {
 			return { count: prevState.count - 1 };
 		});
+	}
+
+	eventHandler(event) {
+		console.log(event.target);
 	}
 
 	render() {
@@ -84,6 +88,13 @@ export default class Main extends React.Component {
 				{/* third way for send input to function */}
 				<button onClick={this.adderHandler.bind(this)}>
 					<h3>+</h3>
+				</button>
+
+				<hr />
+				<hr />
+
+				<button onClick={(event) => this.eventHandler(event)}>
+					<h3>Event</h3>
 				</button>
 
 				<hr />
