@@ -32,7 +32,7 @@ export default class Main extends React.Component {
 			count: 0,
 		};
 
-		this.changeUsersHandler = this.changeUsersHandler.bind(this)
+		this.changeUsersHandler = this.changeUsersHandler.bind(this);
 	}
 
 	changeUsersHandler() {
@@ -64,9 +64,13 @@ export default class Main extends React.Component {
 	render() {
 		return (
 			<div>
-				<Users {...this.state.users[0]} />
+				{/* <Users {...this.state.users[0]} />
 				<Users {...this.state.users[1]} />
-				<Users {...this.state.users[2]} />
+				<Users {...this.state.users[2]} /> */}
+				{/* we can also write following script for send prps */}
+				{this.state.users.map((user) => {
+					<Users {...user} />;
+				})}
 
 				<hr />
 				<hr />
