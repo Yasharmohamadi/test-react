@@ -68,9 +68,9 @@ export default class Main extends React.Component {
 				<Users {...this.state.users[1]} />
 				<Users {...this.state.users[2]} /> */}
 				{/* we can also write following script for send prps */}
-				{this.state.users.map((user) => {
-					<Users {...user} />;
-				})}
+				{this.state.users.map((user) => (
+					<Users {...user} />
+				))}
 
 				<hr />
 				<hr />

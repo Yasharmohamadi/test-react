@@ -12,39 +12,39 @@ import React from "react";
 // *** set default value for props in functional component
 // export default function Users(id = 3, name = 'User') {
 
-export default function Users(props) {
-	// let {id, name} = props; // store props value in this obj
-	return (
-		<div>
-			<h3>
-				{props.id}. {props.name} {props.children}
-			</h3>
-		</div>
-	);
-}
+// export default function Users(props) {
+// 	// let {id, name} = props; // store props value in this obj
+// 	return (
+// 		<div>
+// 			<h3>
+// 				{props.id}. {props.name} {props.children}
+// 			</h3>
+// 		</div>
+// 	);
+// }
 
 // *** set default value for props in functional component
-Users.defaultProps = {
-	id: "?",
-	name: "User",
-};
+// Users.defaultProps = {
+// 	id: "?",
+// 	name: "User",
+// };
 
 /*  
 ========== CLASS COMPONENTS ===========
 */
 
 // *** create  component with class
-// export default class Users extends React.Component {
-// 	render(name = "User") {
-// 		return (
-// 			<div>
-// 				<h1>
-// 					{this.props.id}. {this.props.name} {this.props.children}
-// 				</h1>
-// 			</div>
-// 		);
-// 	}
-// }
+export default class Users extends React.Component {
+	render() {
+		return (
+			<div>
+				<h3>
+					{this.props.id}. {this.props.name} {this.props.children}
+				</h3>
+			</div>
+		);
+	}
+}
 
 // *** set default value for props in class component
 // Users.defaultProps = {
