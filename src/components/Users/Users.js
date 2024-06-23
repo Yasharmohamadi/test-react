@@ -37,11 +37,9 @@ import React from "react";
 export default class Users extends React.Component {
 	render() {
 		return (
-			<div>
 				<h3>
 					{this.props.id}. {this.props.name} {this.props.children}
 				</h3>
-			</div>
 		);
 	}
 }

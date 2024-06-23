@@ -51,7 +51,7 @@ export default class Main extends React.Component {
 		});
 	}
 
-	lowerHandler(event) {
+	lowerHandler() {
 		this.setState((prevState) => {
 			return { count: prevState.count - 1 };
 		});
@@ -69,7 +69,9 @@ export default class Main extends React.Component {
 				<Users {...this.state.users[2]} /> */}
 				{/* we can also write following script for send prps */}
 				{this.state.users.map((user) => (
-					<Users {...user} />
+					<div key={user.id}>
+						<Users {...user} />
+					</div>
 				))}
 
 				<hr />
