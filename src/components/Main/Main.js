@@ -1,6 +1,7 @@
 import React from "react";
 import Users from "../Users/Users";
 import ChangeNames from "../ChangeNames/ChangeNames";
+import Counter from "../Counter/Counter";
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -12,112 +13,67 @@ export default class Main extends React.Component {
 				{ id: 2, name: "Joseph" },
 				{ id: 3, name: "Isaac" },
 			],
+			count: 0,
 		};
 
-		this.changeUserHnadler = this.changeUserHnadler.bind(this)
-
+		this.changeUserHnadler = this.changeUserHnadler.bind(this);
+		this.addCountHandler = this.addCountHandler.bind(this);
+		this.subCountHandler = this.subCountHandler.bind(this);
 	}
-	
-	changeUserHnadler () {
+
+	changeUserHnadler() {
 		this.setState({
 			users: [
 				{ id: 1, name: "Tom" },
 				{ id: 2, name: "Donald" },
 				{ id: 3, name: "Winston" },
-			]
-		})
-
+			],
+		});
 	}
 
-	render () {
+	addCountHandler () {
+		this.setState((prevState) => {
+			return {count: prevState.count + 1}
+		})
+	}
+
+	subCountHandler () {
+		this.setState((prevState) => {
+			return {count: prevState.count - 1}
+		})
+	}
+
+	render() {
 		return (
 			<div>
 				{/* Send users to Users component */}
 				{this.state.users.map((user) => (
-					<Users {...user} />
+					<div key={user.id}>
+						<Users {...user} />
+					</div>
 				))}
 
 				{/* Change names with ChangeNames component */}
 				<ChangeNames onClick={this.changeUserHnadler} />
+
+				{/* Counter Section */}
+				<Counter count={this.state.count} add={this.addCountHandler} sub={this.subCountHandler}/>
+
+
 			</div>
-		)
+		);
 	}
 }
 
-// export default function Main() {
-// 	let users = [
-// 		{ id: 1, name: "Adolf" },
-// 		{ id: 2, name: "Joseph" },
-// 		{ id: 3, name: "Isaac" },
-// 	];
-
-// 	const parentHandler = (users) => {
-// 		users = [
-// 			{ id: 1, name: "Tom" },
-// 			{ id: 2, name: "Donald" },
-// 			{ id: 3, name: "Winston" },
-// 		];
-// 		console.log(users);
-// 	};
-// 	return (
-// 		<div>
-// 			{/* Users */}
-// 			{users.map((user) => (
-// 				<Users {...user} />
-// 			))}
-
-// 			{/* Change User */}
-// 			<ChangeUser onClick={parentHandler} />
-// 		</div>
-// 	);
-// }
-
-// // *** work with class and state
-// export default class Main extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-
-// 		this.state = {
-// 			users: [
-// 				{ id: 1, name: "Adolf" },
-// 				{ id: 2, name: "Joseph" },
-// 				{ id: 3, name: "Isaac" },
-// 			],
 // 			count: 0,
 // 			inputValue: '',
 // 			checkedValue: false,
 
-// 		};
-
-// 		this.changeUsersHandler = this.changeUsersHandler.bind(this);
 // 		this.inputHandler = this.inputHandler.bind(this)
 // 		this.checkHandler = this.checkHandler.bind(this)
 
-// 		let PrentComponent = () => {
-
-// 			let changeUsersHandler = () => {
-// 				this.setState({
-// 					users: [
-// 						{ id: 1, name: "Tom" },
-// 						{ id: 2, name: "Donald" },
-// 						{ id: 3, name: "Winston" },
-// 					],
-// 				});
-// 			}
-// 		}
 // 	}
 
-// 	// adderHandler() {
-// 	// 	this.setState((prevState) => {
-// 	// 		return { count: prevState.count + 1 };
-// 	// 	});
-// 	// }
-
-// 	// lowerHandler() {
-// 	// 	this.setState((prevState) => {
-// 	// 		return { count: prevState.count - 1 };
-// 	// 	});
-// 	// }
 
 // 	// eventHandler(event) {
 // 	// 	console.log(event.target);
@@ -132,34 +88,6 @@ export default class Main extends React.Component {
 // 	// 	console.log(event.nativeEvent.target.checked);
 // 	// }
 
-// 	render() {
-// 		return (
-// 			<div>
-// 				{/* <Users {...this.state.users[0]} />
-// 				<Users {...this.state.users[1]} />
-// 				<Users {...this.state.users[2]} /> */}
-// 				{/* we can also write following script for send prps */}
-// 				{this.state.users.map((user) => (
-// 					<div key={user.id}>
-// 						<Users {...user} />
-// 					</div>
-// 				))}
-
-// 				<ChangeUser onClick={this.changeUsersHandler}/>
-
-// 				{/* second way for send input to function */}
-// 				{/* <button onClick={() => this.lowerHandler()}>
-// 					<h3>-</h3>
-// 				</button> */}
-// 				{/* <button>
-// 					<h3>{this.state.count}</h3>
-// 				</button> */}
-// 				{/* third way for send input to function */}
-// 				{/* <button onClick={this.adderHandler.bind(this)}>
-// 					<h3>+</h3>
-// 				</button> */}
-// {/*
-// 				<hr />
 
 // 				<button onClick={(event) => this.eventHandler(event)}>
 // 					<h3>Event</h3>
