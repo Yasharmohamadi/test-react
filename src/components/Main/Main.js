@@ -30,11 +30,14 @@ export default class Main extends React.Component {
 				{ id: 3, name: "Isaac" },
 			],
 			count: 0,
-			value: ''
+			inputValue: '',
+			checkedValue: false,
+
 		};
 
 		this.changeUsersHandler = this.changeUsersHandler.bind(this);
 		this.inputHandler = this.inputHandler.bind(this)
+		this.checkHandler = this.checkHandler.bind(this)
 	}
 
 	changeUsersHandler() {
@@ -64,8 +67,12 @@ export default class Main extends React.Component {
 	}
 
 	inputHandler(event) {
-		this.setState({value: event.target.value})
-		console.log(event.target);
+		this.setState({inputValue: event.target.value})
+	}
+
+	checkHandler(event) {
+		this.setState({checkedValue: event.nativeEvent.target.checked})
+		console.log(event.nativeEvent.target.checked);
 	}
 
 	render() {
@@ -110,7 +117,10 @@ export default class Main extends React.Component {
 				<hr />
 				
 				<form>
-					<input type="text" value={this.state.value} onChange={this.inputHandler}></input>
+					<input type="text" value={this.state.inputValue} onChange={this.inputHandler} placeholder="type to set a value ..." />
+					<br />
+					<label htmlFor="checkBox">checkBox</label>
+					<input type="checkBox" id="checkBox" checked={this.state.checkedValue} onChange={this.checkHandler}></input>
 				</form>
 			</div>
 		);
