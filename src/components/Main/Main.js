@@ -2,6 +2,7 @@ import React from "react";
 import Users from "../Users/Users";
 import ChangeNames from "../ChangeNames/ChangeNames";
 import Counter from "../Counter/Counter";
+import Input from "../Input/Input";
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -14,11 +15,13 @@ export default class Main extends React.Component {
 				{ id: 3, name: "Isaac" },
 			],
 			count: 0,
+			inputValue: '',
 		};
 
 		this.changeUserHnadler = this.changeUserHnadler.bind(this);
 		this.addCountHandler = this.addCountHandler.bind(this);
 		this.subCountHandler = this.subCountHandler.bind(this);
+		this.inputHandler = this.inputHandler.bind(this);
 	}
 
 	changeUserHnadler() {
@@ -43,6 +46,13 @@ export default class Main extends React.Component {
 		})
 	}
 
+	inputHandler (event) {
+		this.setState({
+			inputValue: event.target.value
+		})
+
+	}
+
 	render() {
 		return (
 			<div>
@@ -52,32 +62,25 @@ export default class Main extends React.Component {
 						<Users {...user} />
 					</div>
 				))}
+				<hr />
+				<hr />
 
 				{/* Change names with ChangeNames component */}
 				<ChangeNames onClick={this.changeUserHnadler} />
+				<hr />
+				<hr />
 
 				{/* Counter Section */}
 				<Counter count={this.state.count} add={this.addCountHandler} sub={this.subCountHandler}/>
+				<hr />
+				<hr />
 
-
+				{/* Input Section */}
+				<Input value={this.state.inputValue} onChange={this.inputHandler}/>
 			</div>
 		);
 	}
 }
-
-// 			count: 0,
-// 			inputValue: '',
-// 			checkedValue: false,
-
-// 		this.inputHandler = this.inputHandler.bind(this)
-// 		this.checkHandler = this.checkHandler.bind(this)
-
-// 	}
-
-
-// 	// eventHandler(event) {
-// 	// 	console.log(event.target);
-// 	// }
 
 // 	// inputHandler(event) {
 // 	// 	this.setState({inputValue: event.target.value})
@@ -87,13 +90,6 @@ export default class Main extends React.Component {
 // 	// 	this.setState({checkedValue: event.nativeEvent.target.checked})
 // 	// 	console.log(event.nativeEvent.target.checked);
 // 	// }
-
-
-// 				<button onClick={(event) => this.eventHandler(event)}>
-// 					<h3>Event</h3>
-// 				</button>
-
-// 				<hr /> */}
 
 // 				{/* <form>
 // 					<input type="text" value={this.state.inputValue} onChange={this.inputHandler} placeholder="type to set a value ..." />
