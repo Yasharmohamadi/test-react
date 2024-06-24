@@ -3,6 +3,7 @@ import Users from "../Users/Users";
 import ChangeNames from "../ChangeNames/ChangeNames";
 import Counter from "../Counter/Counter";
 import Input from "../Input/Input";
+import CheckBox from "../CheckBox/CheckBox";
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -16,12 +17,14 @@ export default class Main extends React.Component {
 			],
 			count: 0,
 			inputValue: '',
+			checkValue: true
 		};
 
 		this.changeUserHnadler = this.changeUserHnadler.bind(this);
 		this.addCountHandler = this.addCountHandler.bind(this);
 		this.subCountHandler = this.subCountHandler.bind(this);
 		this.inputHandler = this.inputHandler.bind(this);
+		this.checkHandler = this.checkHandler.bind(this);
 	}
 
 	changeUserHnadler() {
@@ -53,6 +56,12 @@ export default class Main extends React.Component {
 
 	}
 
+	checkHandler (event) {
+		this.setState({
+			checkValue: event.nativeEvent.target.checked
+		})
+	}
+
 	render() {
 		return (
 			<div>
@@ -77,27 +86,15 @@ export default class Main extends React.Component {
 
 				{/* Input Section */}
 				<Input value={this.state.inputValue} onChange={this.inputHandler}/>
+				<hr />
+				<hr />
+				
+				{/* CheckBox Section */}
+				<CheckBox checked={this.state.checkValue} onChange={this.checkHandler}/>
+				<hr />
+				<hr />
 			</div>
 		);
 	}
 }
 
-// 	// inputHandler(event) {
-// 	// 	this.setState({inputValue: event.target.value})
-// 	// }
-
-// 	// checkHandler(event) {
-// 	// 	this.setState({checkedValue: event.nativeEvent.target.checked})
-// 	// 	console.log(event.nativeEvent.target.checked);
-// 	// }
-
-// 				{/* <form>
-// 					<input type="text" value={this.state.inputValue} onChange={this.inputHandler} placeholder="type to set a value ..." />
-// 					<br />
-// 					<label htmlFor="checkBox">checkBox</label>
-// 					<input type="checkBox" id="checkBox" checked={this.state.checkedValue} onChange={this.checkHandler}></input>
-// 				</form> */}
-// 			</div>
-// 		);
-// 	}
-// }
