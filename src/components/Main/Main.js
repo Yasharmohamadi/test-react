@@ -30,9 +30,11 @@ export default class Main extends React.Component {
 				{ id: 3, name: "Isaac" },
 			],
 			count: 0,
+			value: ''
 		};
 
 		this.changeUsersHandler = this.changeUsersHandler.bind(this);
+		this.inputHandler = this.inputHandler.bind(this)
 	}
 
 	changeUsersHandler() {
@@ -61,6 +63,11 @@ export default class Main extends React.Component {
 		console.log(event.target);
 	}
 
+	inputHandler(event) {
+		this.setState({value: event.target.value})
+		console.log(event.target);
+	}
+
 	render() {
 		return (
 			<div>
@@ -75,13 +82,11 @@ export default class Main extends React.Component {
 				))}
 
 				<hr />
-				<hr />
 				{/* first way for send input to function */}
 				<button onClick={this.changeUsersHandler}>
 					<h3>Change Names</h3>
 				</button>
 
-				<hr />
 				<hr />
 
 				{/* second way for send input to function */}
@@ -97,14 +102,16 @@ export default class Main extends React.Component {
 				</button>
 
 				<hr />
-				<hr />
 
 				<button onClick={(event) => this.eventHandler(event)}>
 					<h3>Event</h3>
 				</button>
 
 				<hr />
-				<hr />
+				
+				<form>
+					<input type="text" value={this.state.value} onChange={this.inputHandler}></input>
+				</form>
 			</div>
 		);
 	}
