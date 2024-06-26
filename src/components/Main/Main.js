@@ -37,6 +37,22 @@ export default class Main extends React.Component {
 		});
 	}
 
+	removeUserHandler(userID) {
+
+		let newUsers = [...this.state.users]
+
+		let mainIndex = this.state.users.findIndex(user => {
+			return user.id === userID
+		})
+
+		newUsers.splice(mainIndex, 1)
+
+		this.setState({
+			users: newUsers
+		})
+
+	}
+
 	addCountHandler () {
 		this.setState((prevState) => {
 			return {count: prevState.count + 1}
@@ -67,9 +83,9 @@ export default class Main extends React.Component {
 			<div>
 				{/* Send users to Users component */}
 				{this.state.users.map((user) => (
-					<div key={user.id}>
-						<Users {...user} />
-					</div>
+						<Users key={user.id} {...user} onRemove={this.removeUserHandler.bind(this, user.id)}>
+							(click on me !)
+						</Users>
 				))}
 				<hr />
 				<hr />

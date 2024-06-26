@@ -37,7 +37,7 @@ import React from "react";
 export default class Users extends React.Component {
 	render() {
 		return (
-				<h3>
+				<h3 onClick={this.props.onRemove}>
 					{this.props.id}. {this.props.name} {this.props.children}
 				</h3>
 		);
