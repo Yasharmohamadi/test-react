@@ -1,7 +1,7 @@
 export default function CheckBox ({checked, onChange}) {
     return (
         <div>
-            <label htmlFor="checkbox">Check Box</label>
+            <label style={{fontSize: 20}} htmlFor="checkbox">Check Box</label>
             <input checked={checked} type="checkbox" id="checkbox" onChange={onChange} />
         </div>
     )
