@@ -1,10 +1,5 @@
 import React from "react";
-
-/*  
-======== FUNCTIONAL COMPONENTS ========
-*/
-
-// *** create  component with function
+import { FaUserSecret  } from "react-icons/fa";
 
 // *** set new name for props name in functional component
 // export default function Users ({id, name: username}) {
@@ -23,23 +18,13 @@ import React from "react";
 // 	);
 // }
 
-// *** set default value for props in functional component
-// Users.defaultProps = {
-// 	id: "?",
-// 	name: "User",
-// };
-
-/*  
-========== CLASS COMPONENTS ===========
-*/
-
-// *** create  component with class
 export default class Users extends React.Component {
 	render() {
 		return (
-				<h3 onClick={this.props.onRemove}>
-					{this.props.id}. {this.props.name} {this.props.children}
-				</h3>
+				<h2 onClick={this.props.onRemove}>
+					<FaUserSecret  />
+					 {this.props.name} : {this.props.children}
+				</h2>
 		);
 	}
 }

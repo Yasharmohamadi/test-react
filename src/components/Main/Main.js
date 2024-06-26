@@ -84,7 +84,7 @@ export default class Main extends React.Component {
 				{/* Send users to Users component */}
 				{this.state.users.map((user) => (
 						<Users key={user.id} {...user} onRemove={this.removeUserHandler.bind(this, user.id)}>
-							(click on me !)
+							Don't touch me, bitch !
 						</Users>
 				))}
 				<hr />
