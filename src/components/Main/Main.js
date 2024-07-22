@@ -4,6 +4,7 @@ import ChangeNames from "../ChangeNames/ChangeNames";
 import Counter from "../Counter/Counter";
 import Input from "../Input/Input";
 import CheckBox from "../CheckBox/CheckBox";
+import Alert from 'react-bootstrap/Alert'
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -121,6 +122,13 @@ export default class Main extends React.Component {
 				{/* Buttons section BTS */}
 				<button className="btn btn-success">Success</button>
 				<button className="btn btn-danger">Danger</button>
+				<hr />
+				<hr />
+
+				{/* Alert section react-bootstrap */}
+				<Alert variant="primary">
+					This is <Alert.Link href="#">react-bootstrap</Alert.Link>
+				</Alert >
 			</div>
 		);
 	}
