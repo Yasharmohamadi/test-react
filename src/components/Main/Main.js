@@ -16,8 +16,8 @@ export default class Main extends React.Component {
 				{ id: 3, name: "Isaac" },
 			],
 			count: 0,
-			inputValue: '',
-			checkValue: true
+			inputValue: "",
+			checkValue: true,
 		};
 
 		this.changeUserHnadler = this.changeUserHnadler.bind(this);
@@ -38,44 +38,41 @@ export default class Main extends React.Component {
 	}
 
 	removeUserHandler(userID) {
+		let newUsers = [...this.state.users];
 
-		let newUsers = [...this.state.users]
+		let mainIndex = this.state.users.findIndex((user) => {
+			return user.id === userID;
+		});
 
-		let mainIndex = this.state.users.findIndex(user => {
-			return user.id === userID
-		})
-
-		newUsers.splice(mainIndex, 1)
+		newUsers.splice(mainIndex, 1);
 
 		this.setState({
-			users: newUsers
-		})
-
+			users: newUsers,
+		});
 	}
 
-	addCountHandler () {
+	addCountHandler() {
 		this.setState((prevState) => {
-			return {count: prevState.count + 1}
-		})
+			return { count: prevState.count + 1 };
+		});
 	}
 
-	subCountHandler () {
+	subCountHandler() {
 		this.setState((prevState) => {
-			return {count: prevState.count - 1}
-		})
+			return { count: prevState.count - 1 };
+		});
 	}
 
-	inputHandler (event) {
+	inputHandler(event) {
 		this.setState({
-			inputValue: event.target.value
-		})
-
+			inputValue: event.target.value,
+		});
 	}
 
-	checkHandler (event) {
+	checkHandler(event) {
 		this.setState({
-			checkValue: event.nativeEvent.target.checked
-		})
+			checkValue: event.nativeEvent.target.checked,
+		});
 	}
 
 	render() {
@@ -83,9 +80,13 @@ export default class Main extends React.Component {
 			<div>
 				{/* Send users to Users component */}
 				{this.state.users.map((user) => (
-						<Users key={user.id} {...user} onRemove={this.removeUserHandler.bind(this, user.id)}>
-							Don't touch me, bitch !
-						</Users>
+					<Users
+						key={user.id}
+						{...user}
+						onRemove={this.removeUserHandler.bind(this, user.id)}
+					>
+						Don't touch me, bitch !
+					</Users>
 				))}
 				<hr />
 				<hr />
@@ -96,21 +97,31 @@ export default class Main extends React.Component {
 				<hr />
 
 				{/* Counter Section */}
-				<Counter count={this.state.count} add={this.addCountHandler} sub={this.subCountHandler}/>
+				<Counter
+					count={this.state.count}
+					add={this.addCountHandler}
+					sub={this.subCountHandler}
+				/>
 				<hr />
 				<hr />
 
 				{/* Input Section */}
-				<Input value={this.state.inputValue} onChange={this.inputHandler}/>
+				<Input value={this.state.inputValue} onChange={this.inputHandler} />
 				<hr />
 				<hr />
-				
+
 				{/* CheckBox Section */}
-				<CheckBox checked={this.state.checkValue} onChange={this.checkHandler}/>
+				<CheckBox
+					checked={this.state.checkValue}
+					onChange={this.checkHandler}
+				/>
 				<hr />
 				<hr />
+
+				{/* Buttons section BTS */}
+				<button className="btn btn-success">Success</button>
+				<button className="btn btn-danger">Danger</button>
 			</div>
 		);
 	}
 }
-
