@@ -139,6 +139,13 @@ export default class Main extends React.Component {
 				<hr />
 				<hr />
 
+				{/* block level Button with rbts*/}
+				<div className="d-grid gap-2">
+					<Button variant="primary">medium</Button>
+				</div>
+
+				<hr />
+				<hr />
 				{/* Alert section react-bootstrap */}
 				{/* onClose={} */}
 				<Alert variant="success" dismissible>
