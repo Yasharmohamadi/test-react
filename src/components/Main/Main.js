@@ -126,9 +126,13 @@ export default class Main extends React.Component {
 				<hr />
 
 				{/* Alert section react-bootstrap */}
-				<Alert variant="primary">
+				<Alert variant="success">
+					<Alert.Heading>Success !</Alert.Heading>
 					This is <Alert.Link href="#">react-bootstrap</Alert.Link>
 				</Alert >
+				<hr />
+				<hr />
+
 			</div>
 		);
 	}
