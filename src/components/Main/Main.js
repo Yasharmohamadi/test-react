@@ -4,8 +4,9 @@ import ChangeNames from "../ChangeNames/ChangeNames";
 import Counter from "../Counter/Counter";
 import Input from "../Input/Input";
 import CheckBox from "../CheckBox/CheckBox";
-import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
+// import Alert from "react-bootstrap/Alert";
+// import Button from "react-bootstrap/Button";
+import {Button, Alert} from "react-bootstrap";
 
 export default class Main extends React.Component {
 	constructor(props) {
