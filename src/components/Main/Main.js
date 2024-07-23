@@ -163,7 +163,7 @@ export default class Main extends React.Component {
 				{/* block level Button with rbts*/}
 				{/* Loading btn with rbts */}
 				<div className="d-grid gap-2">
-					<Button variant="primary" onClick={this.loadingHandler.bind(this)}>
+					<Button variant="primary" onClick={this.loadingHandler.bind(this)} disabled={this.state.isLoading}>
 					{this.state.isLoading ? "Loading ..." : "Download"}
 					</Button>
 				</div>
