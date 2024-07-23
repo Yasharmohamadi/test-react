@@ -20,6 +20,7 @@ export default class Main extends React.Component {
 			count: 0,
 			inputValue: "",
 			checkValue: true,
+			isLoading: false,
 		};
 
 		this.changeUserHnadler = this.changeUserHnadler.bind(this);
@@ -77,6 +78,18 @@ export default class Main extends React.Component {
 		});
 	}
 
+	loadingHandler() {
+		this.setState({
+			isLoading: true,
+		});
+
+		setTimeout(() => {
+			this.setState({
+				isLoading: false,
+			});
+		}, 1000);
+	}
+
 	render() {
 		return (
 			<div>
@@ -126,11 +139,19 @@ export default class Main extends React.Component {
 				<hr />
 				<hr />
 
+				{/* Alert section react-bootstrap */}
+				{/* onClose={} */}
+				<Alert variant="success" dismissible>
+					<Alert.Heading>Success !</Alert.Heading>
+					This is <Alert.Link href="#">react-bootstrap</Alert.Link>
+				</Alert>
+				<hr />
+				<hr />
 				{/* Buttons section rBTS */}
 				<Button variant="outline-primary" size="lg">
 					Large
 				</Button>
-				<Button variant="outline-primary" size="md">
+				<Button variant="outline-primary" size="md" disabled>
 					medium
 				</Button>
 				<Button variant="outline-primary" size="sm">
@@ -140,18 +161,13 @@ export default class Main extends React.Component {
 				<hr />
 
 				{/* block level Button with rbts*/}
+				{/* Loading btn with rbts */}
 				<div className="d-grid gap-2">
-					<Button variant="primary">medium</Button>
+					<Button variant="primary" onClick={this.loadingHandler.bind(this)}>
+					{this.state.isLoading ? "Loading ..." : "Download"}
+					</Button>
 				</div>
 
-				<hr />
-				<hr />
-				{/* Alert section react-bootstrap */}
-				{/* onClose={} */}
-				<Alert variant="success" dismissible>
-					<Alert.Heading>Success !</Alert.Heading>
-					This is <Alert.Link href="#">react-bootstrap</Alert.Link>
-				</Alert>
 				<hr />
 				<hr />
 			</div>
