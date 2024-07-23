@@ -19,6 +19,7 @@ export default class Main extends React.Component {
 			count: 0,
 			inputValue: "",
 			checkValue: true,
+			showAlert: true
 		};
 
 		this.changeUserHnadler = this.changeUserHnadler.bind(this);
@@ -126,7 +127,7 @@ export default class Main extends React.Component {
 				<hr />
 
 				{/* Alert section react-bootstrap */}
-				<Alert variant="success">
+				<Alert variant="success" dismissible>
 					<Alert.Heading>Success !</Alert.Heading>
 					This is <Alert.Link href="#">react-bootstrap</Alert.Link>
 				</Alert >
