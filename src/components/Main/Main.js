@@ -5,6 +5,7 @@ import Counter from "../Counter/Counter";
 import Input from "../Input/Input";
 import CheckBox from "../CheckBox/CheckBox";
 import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -19,7 +20,6 @@ export default class Main extends React.Component {
 			count: 0,
 			inputValue: "",
 			checkValue: true,
-			showAlert: true,
 		};
 
 		this.changeUserHnadler = this.changeUserHnadler.bind(this);
@@ -126,8 +126,22 @@ export default class Main extends React.Component {
 				<hr />
 				<hr />
 
+				{/* Buttons section rBTS */}
+				<Button variant="outline-primary" size="lg">
+					Large
+				</Button>
+				<Button variant="outline-primary" size="md">
+					medium
+				</Button>
+				<Button variant="outline-primary" size="sm">
+					small
+				</Button>
+				<hr />
+				<hr />
+
 				{/* Alert section react-bootstrap */}
-				<Alert variant="success" onClose={a} dismissible>
+				{/* onClose={} */}
+				<Alert variant="success" dismissible>
 					<Alert.Heading>Success !</Alert.Heading>
 					This is <Alert.Link href="#">react-bootstrap</Alert.Link>
 				</Alert>
