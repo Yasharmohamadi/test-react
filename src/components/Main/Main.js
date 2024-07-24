@@ -6,7 +6,8 @@ import Input from "../Input/Input";
 import CheckBox from "../CheckBox/CheckBox";
 // import Alert from "react-bootstrap/Alert";
 // import Button from "react-bootstrap/Button";
-import {Button, Alert} from "react-bootstrap";
+import { Button, Alert, Card } from "react-bootstrap";
+import { Holder } from "holderjs";
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -104,13 +105,13 @@ export default class Main extends React.Component {
 						Don't touch me, bitch !
 					</Users>
 				))}
-				<hr />
-				<hr />
+				<br />
 
 				{/* Change names with ChangeNames component */}
 				<ChangeNames onClick={this.changeUserHnadler} />
-				<hr />
-				<hr />
+				<br />
+				<br />
+
 
 				{/* Counter Section */}
 				<Counter
@@ -118,27 +119,24 @@ export default class Main extends React.Component {
 					add={this.addCountHandler}
 					sub={this.subCountHandler}
 				/>
-				<hr />
-				<hr />
+				<br />
 
 				{/* Input Section */}
 				<Input value={this.state.inputValue} onChange={this.inputHandler} />
-				<hr />
-				<hr />
+				<br />
 
 				{/* CheckBox Section */}
 				<CheckBox
 					checked={this.state.checkValue}
 					onChange={this.checkHandler}
 				/>
-				<hr />
-				<hr />
+				<br />
 
 				{/* Buttons section BTS */}
 				<button className="btn btn-success">Success</button>
 				<button className="btn btn-danger">Danger</button>
-				<hr />
-				<hr />
+				<br />
+				<br />
 
 				{/* Alert section react-bootstrap */}
 				{/* onClose={} */}
@@ -146,8 +144,8 @@ export default class Main extends React.Component {
 					<Alert.Heading>Success !</Alert.Heading>
 					This is <Alert.Link href="#">react-bootstrap</Alert.Link>
 				</Alert>
-				<hr />
-				<hr />
+				<br />
+
 				{/* Buttons section rBTS */}
 				<Button variant="outline-primary" size="lg">
 					Large
@@ -158,19 +156,59 @@ export default class Main extends React.Component {
 				<Button variant="outline-primary" size="sm">
 					small
 				</Button>
-				<hr />
-				<hr />
+				<br />
+				<br />
 
 				{/* block level Button with rbts*/}
 				{/* Loading btn with rbts */}
 				<div className="d-grid gap-2">
-					<Button variant="primary" onClick={this.loadingHandler.bind(this)} disabled={this.state.isLoading}>
-					{this.state.isLoading ? "Loading ..." : "Download"}
+					<Button
+						variant="primary"
+						onClick={this.loadingHandler.bind(this)}
+						disabled={this.state.isLoading}
+					>
+						{this.state.isLoading ? "Loading ..." : "Download"}
 					</Button>
 				</div>
 
-				<hr />
-				<hr />
+				<br />
+
+				{/* Card Component */}
+				<div className="card-box">
+					<Card style={{ width: "12rem" }}>
+						<Card.Img variant="top" src="holder.js/100px120"></Card.Img>
+						<Card.Body>
+							<Card.Title>Card Title</Card.Title>
+							<Card.Text>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</Card.Text>
+							<Button variant="primary">See More</Button>
+						</Card.Body>
+					</Card>
+					<Card style={{ width: "12rem" }}>
+						<Card.Img variant="top" src="holder.js/100px120"></Card.Img>
+						<Card.Body>
+							<Card.Title>Card Title</Card.Title>
+							<Card.Text>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</Card.Text>
+							<Button variant="primary">See More</Button>
+						</Card.Body>
+					</Card>
+					<Card style={{ width: "12rem" }}>
+						<Card.Img variant="top" src="holder.js/100px120"></Card.Img>
+						<Card.Body>
+							<Card.Title>Card Title</Card.Title>
+							<Card.Text>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</Card.Text>
+							<Button variant="primary">See More</Button>
+						</Card.Body>
+					</Card>
+				</div>
 			</div>
 		);
 	}
