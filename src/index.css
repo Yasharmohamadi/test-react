@@ -2,10 +2,3 @@ body {
   background: #dfdfdf;
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.card-box {
-  max-width: 60rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
