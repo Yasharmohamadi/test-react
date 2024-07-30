@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Main from './components/Main/Main'
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Users from "./components/Users/Users";
+import Comments from "./components/Comments/Comments";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 // FIRST WAY TO USE REACT
 // ReactDOM.render(
@@ -11,7 +12,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 // );
 
 // SECOND WAY TO USE REACT
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <Main />
+	<React.Fragment>
+		<Users />
+		<Comments />
+	</React.Fragment>
 );

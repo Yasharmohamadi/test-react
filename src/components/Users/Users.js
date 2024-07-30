@@ -1,12 +1,12 @@
 import React from "react";
 import { Table, Container, Alert } from "react-bootstrap";
 
-export default class Main extends React.Component {
+export default class Users extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			posts: [],
+			users: [],
 		};
 	}
 
@@ -17,7 +17,7 @@ export default class Main extends React.Component {
 			.then((response) => response.json())
 			.then((data) => {
 				this.setState({
-					posts: data,
+					users: data,
 				});
 			});
 	}
@@ -25,7 +25,7 @@ export default class Main extends React.Component {
 	render() {
 		return (
 			<Container className="mt-5">
-				{this.state.posts.length > 0 ? (
+				{this.state.users.length > 0 ? (
 					<Table striped bordered hover>
 						<thead>
 							<tr>
@@ -35,16 +35,16 @@ export default class Main extends React.Component {
 								<th>Phone</th>
 							</tr>
 						</thead>
-						{this.state.posts.map((post) => (
-							<tbody>
-								<tr>
-									<td>{post.id}</td>
-									<td>{post.name}</td>
-									<td>{post.email}</td>
-									<td>{post.phone}</td>
+						<tbody>
+							{this.state.users.map((user) => (
+								<tr key={user.id}>
+									<td>{user.id}</td>
+									<td>{user.name}</td>
+									<td>{user.email}</td>
+									<td>{user.phone}</td>
 								</tr>
-							</tbody>
-						))}
+							))}
+						</tbody>
 					</Table>
 				) : (
 					<Alert variant="danger">Your database is not correct !</Alert>
