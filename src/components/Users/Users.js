@@ -1,32 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table, Container, Alert } from "react-bootstrap";
 
-export default class Users extends React.Component {
-	constructor(props) {
-		super(props);
+export default function Users () {
 
-		this.state = {
-			users: [],
-		};
-	}
+	const [users, setUsers] = useState([])
 
-	componentDidMount() {
-		fetch("https://jsonplaceholder.typicode.com/users", {
-			method: "GET",
-		})
-			.then((response) => response.json())
-			.then((data) => {
-				this.setState({
-					users: data,
-				});
-			})
-			.catch((err) => console.log(err));
-	}
+	fetch("https://jsonplaceholder.typicode.com/users", {
+		method: "GET",
+	})
+		.then((response) => response.json())
+		.then((data) => setUsers(data))
+		.catch((err) => console.log(err));
 
-	render() {
 		return (
 			<Container className="mt-5">
-				{this.state.users.length > 0 ? (
+				{users.length > 0 ? (
 					<Table striped bordered hover>
 						<thead>
 							<tr>
@@ -37,7 +25,7 @@ export default class Users extends React.Component {
 							</tr>
 						</thead>
 						<tbody>
-							{this.state.users.map((user) => (
+							{users.map((user) => (
 								<tr key={user.id}>
 									<td>{user.id}</td>
 									<td>{user.name}</td>
@@ -52,5 +40,4 @@ export default class Users extends React.Component {
 				)}
 			</Container>
 		);
-	}
 }
