@@ -19,7 +19,8 @@ export default class Users extends React.Component {
 				this.setState({
 					users: data,
 				});
-			});
+			})
+			.catch((err) => console.log(err));
 	}
 
 	render() {
