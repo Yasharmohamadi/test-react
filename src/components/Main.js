@@ -11,23 +11,13 @@ import { TableChart, People, Home, DynamicFeed } from "@mui/icons-material";
 export default function Main() {
 	return (
 		<Container className="mt-5">
-			
-
 			<Link to="/">
-				<Button
-					color="warning"
-					variant="contained"
-					startIcon={<Home />}
-				>
+				<Button color="warning" variant="contained" startIcon={<Home />}>
 					Home
 				</Button>
 			</Link>
 			<Link to="/users">
-				<Button
-					color="primary"
-					variant="contained"
-					startIcon={<People />}
-				>
+				<Button color="primary" variant="contained" startIcon={<People />}>
 					Users
 				</Button>
 			</Link>
@@ -41,22 +31,21 @@ export default function Main() {
 				</Button>
 			</Link>
 			<Link to="/posts">
-				<Button
-					color="success"
-					variant="contained"
-					startIcon={<DynamicFeed />}
-				>
+				<Button color="success" variant="contained" startIcon={<DynamicFeed />}>
 					Posts
 				</Button>
 			</Link>
 
-            <Routes>
+			<Routes>
 				<Route path="/" />
 				<Route path="/users" element={<Users />} />
 				<Route path="/table" element={<TableGrid />} />
 				<Route path="/posts" element={<Posts />} />
 				<Route path="/posts/:postID" element={<MainPost />} />
 			</Routes>
+			<br />
+			<br />
+			<h1>Test Project with REACT</h1>
 		</Container>
 	);
 }

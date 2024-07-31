@@ -19,26 +19,17 @@ export default function Posts() {
 			{posts.length > 0 &&
 				posts.map((post) => (
 					<div key={post.id}>
-						<Card sx={{ width: 500 }}>
+						<Card>
 							<CardContent>
-								<Typography
-									sx={{ fontSize: 30 }}
-									color="text.secondary"
-									gutterBottom
-								>
+								<Typography sx={{ fontSize: 30 }} color="text.secondary">
 									{post.id}
 								</Typography>
-								<Typography sx={{ mb: 1.5 }} color="text.secondary">
-									{post.body}
-								</Typography>
-							</CardContent>
-							<CardActions>
 								<Link to={"/posts/" + post.id}>
 									<Button color="success" variant="contained">
 										See Post
 									</Button>
 								</Link>
-							</CardActions>
+							</CardContent>
 						</Card>
 						<br />
 					</div>

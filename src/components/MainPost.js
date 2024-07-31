@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import Data from "./Data";
 import {
 	Card,
@@ -17,31 +17,27 @@ export default function MainPost() {
 		return post.id == params.postID;
 	});
 
+	let hasPost = posts.some((post) => post.id == params.postID);
+
 	return (
 		<div>
 			<br />
-			<Card sx={{ width: 500 }}>
-				<CardContent>
-					<Typography sx={{ fontSize: 30 }} color="text.secondary" gutterBottom>
-						{mainPost.id}
-					</Typography>
-					<Typography sx={{ mb: 1.5 }} color="text.secondary">
-						{mainPost.body}
-					</Typography>
-				</CardContent>
-				<CardActions>
-
-					<Link to="/posts">
-						<Button
-                        size="small"
-							color="success"
-							variant="contained"
-						>
-							Back to Posts
-						</Button>
-					</Link>
-				</CardActions>
-			</Card>
+			{hasPost ? (
+				<Card>
+					<CardContent>
+						<Typography sx={{ fontSize: 30 }} color="text.secondary">
+							{mainPost.id}
+						</Typography>
+						<Link to="/posts">
+							<Button color="success" variant="contained">
+								Back to Posts
+							</Button>
+						</Link>
+					</CardContent>
+				</Card>
+			) : (
+				<Navigate to="/" />
+			)}
 		</div>
 	);
 }
