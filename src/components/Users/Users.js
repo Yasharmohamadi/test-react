@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Container } from "react-bootstrap";
 import { Person, Delete } from "@mui/icons-material";
 import { Alert, Button } from "@mui/material";
@@ -6,15 +6,26 @@ import { Alert, Button } from "@mui/material";
 export default function Users() {
 	const [users, setUsers] = useState([]);
 
-	fetch("https://jsonplaceholder.typicode.com/users", {
-		method: "GET",
-	})
-		.then((response) => response.json())
-		.then((data) => setUsers(data))
-		.catch((err) => console.log(err));
+	useEffect(() => {
+		fetch("https://jsonplaceholder.typicode.com/users", {
+			method: "GET",
+		})
+			.then((response) => response.json())
+			.then((data) => setUsers(data))
+			.catch((err) => console.log(err));
+	}, []);
+
+	
+	const deleteHandler = (userID) => {
+		let filteredUsers = users.filter(user => {
+			return user.id !== userID
+		})
+
+		setUsers(filteredUsers)
+	}
 
 	return (
-		<Container className="mt-5">
+		<div>
 			{users.length > 0 ? (
 				<div>
 					<Alert variant="filled" severity="success">
@@ -46,6 +57,7 @@ export default function Users() {
 											color="error"
 											variant="contained"
 											startIcon={<Delete />}
+											onClick={() => deleteHandler(user.id)}
 										>
 											Delete
 										</Button>
@@ -58,6 +70,6 @@ export default function Users() {
 			) : (
 				<Alert severity="error">This is an error Alert.</Alert>
 			)}
-		</Container>
+		</div>
 	);
 }
