@@ -1,10 +1,12 @@
 import React from "react";
 import Users from "./Users";
 import TableGrid from "./TableGrid";
+import Posts from "./Posts";
+import MainPost from "./MainPost";
 import { Route, Routes, Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "@mui/material";
-import { TableChart, People, Home } from "@mui/icons-material";
+import { TableChart, People, Home, DynamicFeed } from "@mui/icons-material";
 
 export default function Main() {
 	return (
@@ -38,11 +40,22 @@ export default function Main() {
 					Table
 				</Button>
 			</Link>
+			<Link to="/posts">
+				<Button
+					color="success"
+					variant="contained"
+					startIcon={<DynamicFeed />}
+				>
+					Posts
+				</Button>
+			</Link>
 
             <Routes>
 				<Route path="/" />
 				<Route path="/users" element={<Users />} />
 				<Route path="/table" element={<TableGrid />} />
+				<Route path="/posts" element={<Posts />} />
+				<Route path="/posts/:postID" element={<MainPost />} />
 			</Routes>
 		</Container>
 	);
