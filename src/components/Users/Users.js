@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Table, Container, Alert } from "react-bootstrap";
+import { Table, Container } from "react-bootstrap";
 import { Person } from "@mui/icons-material";
+import { Alert } from "@mui/material";
 
 export default function Users() {
 	const [users, setUsers] = useState([]);
@@ -15,28 +16,37 @@ export default function Users() {
 	return (
 		<Container className="mt-5">
 			{users.length > 0 ? (
-				<Table striped bordered hover>
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Phone</th>
-						</tr>
-					</thead>
-					<tbody>
-						{users.map((user) => (
-							<tr key={user.id}>
-								<td>{user.id}</td>
-								<td><Person />{user.name}</td>
-								<td>{user.email}</td>
-								<td>{user.phone}</td>
+				<div>
+					<Alert variant="filled" severity="success">
+						We got your users.
+					</Alert>
+					<br />
+					<Table striped bordered hover>
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Phone</th>
 							</tr>
-						))}
-					</tbody>
-				</Table>
+						</thead>
+						<tbody>
+							{users.map((user) => (
+								<tr key={user.id}>
+									<td>{user.id}</td>
+									<td>
+										<Person />
+										{user.name}
+									</td>
+									<td>{user.email}</td>
+									<td>{user.phone}</td>
+								</tr>
+							))}
+						</tbody>
+					</Table>
+				</div>
 			) : (
-				<Alert variant="danger">Your database is not correct !</Alert>
+				<Alert severity="error">This is an error Alert.</Alert>
 			)}
 		</Container>
 	);
