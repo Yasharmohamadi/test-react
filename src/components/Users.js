@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Table, Container } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { Person, Delete } from "@mui/icons-material";
 import { Alert, Button } from "@mui/material";
+import TableGrid from "./TableGrid";
 
 export default function Users() {
 	const [users, setUsers] = useState([]);
@@ -15,14 +16,13 @@ export default function Users() {
 			.catch((err) => console.log(err));
 	}, []);
 
-	
 	const deleteHandler = (userID) => {
-		let filteredUsers = users.filter(user => {
-			return user.id !== userID
-		})
+		let filteredUsers = users.filter((user) => {
+			return user.id !== userID;
+		});
 
-		setUsers(filteredUsers)
-	}
+		setUsers(filteredUsers);
+	};
 
 	return (
 		<div>
@@ -53,14 +53,7 @@ export default function Users() {
 									<td>{user.email}</td>
 									<td>{user.phone}</td>
 									<td>
-										<Button
-											color="error"
-											variant="contained"
-											startIcon={<Delete />}
-											onClick={() => deleteHandler(user.id)}
-										>
-											Delete
-										</Button>
+										<Delete onClick={() => deleteHandler(user.id)} />
 									</td>
 								</tr>
 							))}

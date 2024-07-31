@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import { Container } from "react-bootstrap";
-import Users from "./components/Users/Users";
-import Table from "./components/Table/Table";
+import Main from "./components/Main";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 // FIRST WAY TO USE REACT
@@ -16,7 +14,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<Container  className="mt-5">
-		<Users />
-		<Table />
+		<Main />
 	</Container>
 );
