@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Table, Container } from "react-bootstrap";
-import { Person } from "@mui/icons-material";
-import { Alert } from "@mui/material";
+import { Person, Delete } from "@mui/icons-material";
+import { Alert, Button } from "@mui/material";
 
 export default function Users() {
 	const [users, setUsers] = useState([]);
@@ -18,7 +18,7 @@ export default function Users() {
 			{users.length > 0 ? (
 				<div>
 					<Alert variant="filled" severity="success">
-						We got your users.
+						We Got your Users.
 					</Alert>
 					<br />
 					<Table striped bordered hover>
@@ -28,6 +28,7 @@ export default function Users() {
 								<th>Name</th>
 								<th>Email</th>
 								<th>Phone</th>
+								<th>Delete</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -40,6 +41,15 @@ export default function Users() {
 									</td>
 									<td>{user.email}</td>
 									<td>{user.phone}</td>
+									<td>
+										<Button
+											color="error"
+											variant="contained"
+											startIcon={<Delete />}
+										>
+											Delete
+										</Button>
+									</td>
 								</tr>
 							))}
 						</tbody>
