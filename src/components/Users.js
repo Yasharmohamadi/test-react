@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { Person, Delete } from "@mui/icons-material";
-import { Alert, Button } from "@mui/material";
-import TableGrid from "./TableGrid";
+import { Alert } from "@mui/material";
 
 export default function Users() {
 	const [users, setUsers] = useState([]);

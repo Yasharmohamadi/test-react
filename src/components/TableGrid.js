@@ -90,6 +90,7 @@ export default function TableGrid(props) {
 	return (
 		<div>
 			<DataGrid rows={rows} columns={columns} checkboxSelection />
+			<br />
 		</div>
 	);
 }

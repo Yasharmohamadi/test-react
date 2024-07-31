@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Container } from "react-bootstrap";
+import { BrowserRouter } from "react-router-dom";
 import Main from "./components/Main";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
@@ -13,7 +13,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 // SECOND WAY TO USE REACT
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<Container  className="mt-5">
+	<BrowserRouter>
 		<Main />
-	</Container>
+	</BrowserRouter>
 );
