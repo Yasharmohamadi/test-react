@@ -1,39 +1,49 @@
 import React from "react";
 import Users from "./Users";
 import TableGrid from "./TableGrid";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "@mui/material";
-import { ArrowCircleRight } from "@mui/icons-material";
+import { TableChart, People, Home } from "@mui/icons-material";
 
 export default function Main() {
 	return (
 		<Container className="mt-5">
-			<Routes>
-				<Route path="/users" element={<Users />} />
-				<Route path="/table" element={<TableGrid />} />
-			</Routes>
+			
 
-			<a href="/users">
+			<Link to="/">
+				<Button
+					color="warning"
+					variant="contained"
+					startIcon={<Home />}
+				>
+					Home
+				</Button>
+			</Link>
+			<Link to="/users">
 				<Button
 					color="primary"
 					variant="contained"
-					endIcon={<ArrowCircleRight />}
+					startIcon={<People />}
 				>
-					Users Pages
+					Users
 				</Button>
-			</a>
-			<br />
-			<br />
-			<a href="/table">
+			</Link>
+			<Link to="/table">
 				<Button
 					color="secondary"
 					variant="contained"
-					endIcon={<ArrowCircleRight />}
+					startIcon={<TableChart />}
 				>
-					Table Pages
+					Table
 				</Button>
-			</a>
+			</Link>
+
+            <Routes>
+				<Route path="/" />
+				<Route path="/users" element={<Users />} />
+				<Route path="/table" element={<TableGrid />} />
+			</Routes>
 		</Container>
 	);
 }
