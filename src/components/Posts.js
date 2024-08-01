@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import {
-	Card,
-	Typography,
-	Button,
-	CardActions,
-	CardContent,
-} from "@mui/material";
-import {PostsData} from "../Data";
+import { Card, Typography, Button, CardContent } from "@mui/material";
+import { PostsData } from "../Data";
 
 export default function Posts() {
 	const [posts, setPost] = useState(PostsData);
