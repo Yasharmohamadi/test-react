@@ -3,8 +3,8 @@ import { userIsLogin } from "../Utils";
 import { Link, Outlet } from "react-router-dom";
 import { Alert } from "@mui/material";
 
-export default function PrivateRoute() {
-	let checkUser = userIsLogin("s yashar");
+export default function PrivateRoute({ children }) {
+	let checkUser = userIsLogin("yashar");
 	console.log(checkUser);
 
 	return (
@@ -12,7 +12,7 @@ export default function PrivateRoute() {
 			<br />
 			<br />
 			{checkUser ? (
-				<Outlet />
+				children 
 			) : (
 				<Link to="/" style={{ color: "black", textDecoration: "none" }}>
 					<Alert severity="error">

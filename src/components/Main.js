@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import "./style.css";
 import routes from "../Routes";
-import { Route, Routes, Link, useRoutes } from "react-router-dom";
+import { Route, Routes, Link, useRoutes, NavLink } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "@mui/material";
 import {
@@ -16,31 +17,31 @@ export default function Main() {
 
 	return (
 		<Container className="mt-5">
-			<Link to="/">
+			<NavLink className={`button ${(link) => (link.isActive ? "active" : "")}`} to="/">
 				<Button color="primary" variant="contained" startIcon={<Home />}>
 					Home
 				</Button>
-			</Link>
-			<Link to="/users">
+			</NavLink>
+			<NavLink className='button' to="/users">
 				<Button color="success" variant="contained" startIcon={<People />}>
 					Users
 				</Button>
-			</Link>
-			<Link to="/table">
+			</NavLink>
+			<NavLink className='button' to="/table">
 				<Button color="warning" variant="contained" startIcon={<TableChart />}>
 					Table
 				</Button>
-			</Link>
-			<Link to="/posts">
+			</NavLink>
+			<NavLink className='button' to="/posts">
 				<Button color="error" variant="contained" startIcon={<DynamicFeed />}>
 					Posts
 				</Button>
-			</Link>
-			<Link to="/about">
+			</NavLink>
+			<NavLink className='button' to="/about">
 				<Button color="secondary" variant="contained" startIcon={<Info />}>
 					About
 				</Button>
-			</Link>
+			</NavLink>
 			{/* <Routes>
 				<Route path="/" />
 				<Route path="/users" element={<Users />} />
