@@ -8,10 +8,10 @@ import {
 	CardActions,
 	CardContent,
 } from "@mui/material";
-import Data from "./Data";
+import {PostsData} from "../Data";
 
 export default function Posts() {
-	const [posts, setPost] = useState(Data);
+	const [posts, setPost] = useState(PostsData);
 
 	return (
 		<div>

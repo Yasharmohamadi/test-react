@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import Data from "../Data";
+import {PostsData} from "../Data";
 import {
 	Card,
 	Typography,
 	Button,
-	CardActions,
 	CardContent,
 } from "@mui/material";
 
 export default function MainPost() {
-	const [posts, setPost] = useState(Data);
+	const [posts, setPost] = useState(PostsData);
 	let params = useParams();
 
 	let mainPost = posts.find((post) => {
