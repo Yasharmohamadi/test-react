@@ -1,9 +1,9 @@
-import Users from "./Users";
-import TableGrid from "./TableGrid";
-import Posts from "./Posts";
-import MainPost from "./MainPost";
-import NotFound from "./NotFound";
-import About from "./About";
+import Users from "./components/Users";
+import TableGrid from "./components/TableGrid";
+import Posts from "./components/Posts";
+import MainPost from "./components/MainPost";
+import About from "./components/About";
+import NotFound from "./components/NotFound";
 
 let routes = [
 	{ path: "/" },
@@ -11,10 +11,9 @@ let routes = [
 	{ path: "/table", element: <TableGrid /> },
 	{ path: "/posts", element: <Posts /> },
 	{ path: "/posts/:postID", element: <MainPost /> },
-	{ path: "/about/*", element: <About /> , Children: [
-	    { path: "/setting", element: <Setting /> },
-	    { path: "/dashboard", element: <Dashboard /> },
-
+	{ path: "/about/*", element: <About /> , children: [
+        {path: "setting" ,element: <h3>Setting</h3>},
+        {path: "dashboard" ,element: <h3>Dashboard</h3>}
     ]},
 	{ path: "*", element: <NotFound /> },
 ];

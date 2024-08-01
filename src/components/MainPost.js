@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import Data from "./Data";
+import Data from "../Data";
 import {
 	Card,
 	Typography,

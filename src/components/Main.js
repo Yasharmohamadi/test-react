@@ -1,12 +1,18 @@
 import React from "react";
-
+import routes from "../Routes";
 import { Route, Routes, Link, useRoutes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "@mui/material";
-import { TableChart, People, Home, DynamicFeed, Info } from "@mui/icons-material";
+import {
+	TableChart,
+	People,
+	Home,
+	DynamicFeed,
+	Info,
+} from "@mui/icons-material";
 
 export default function Main() {
-	let router = useRoutes([]);
+	let router = useRoutes(routes);
 
 	return (
 		<Container className="mt-5">
@@ -35,7 +41,6 @@ export default function Main() {
 					About
 				</Button>
 			</Link>
-
 			{/* <Routes>
 				<Route path="/" />
 				<Route path="/users" element={<Users />} />
@@ -43,9 +48,13 @@ export default function Main() {
 				<Route path="/posts" element={<Posts />} />
 				<Route path="/posts/:postID" element={<MainPost />} />
 				<Route path="*" element={<NotFound />} />
+				<Route path="/about" element={<About />}>
+					<Route path="setting" element={<h3>Setting</h3>} />
+					<Route path="dashboard" element={<h3>Dashboard</h3>} />
+				</Route>
 			</Routes> */}
+
 			{router}
-			{/* در پروژه های بزرگ روت هارا از فایل دیگری ایمپورت میکنیم */}
 			<br />
 			<br />
 			<h1>Test Project by REACT</h1>
