@@ -1,48 +1,38 @@
 import React from "react";
-import Users from "./Users";
-import TableGrid from "./TableGrid";
-import Posts from "./Posts";
-import MainPost from "./MainPost";
-import NotFound from "./NotFound";
+
 import { Route, Routes, Link, useRoutes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "@mui/material";
-import { TableChart, People, Home, DynamicFeed } from "@mui/icons-material";
+import { TableChart, People, Home, DynamicFeed, Info } from "@mui/icons-material";
 
 export default function Main() {
-	let router = useRoutes([
-		{ path: "/" },
-		{ path: "/users", element: <Users /> },
-		{ path: "/table", element: <TableGrid /> },
-		{ path: "/posts", element: <Posts /> },
-		{ path: "/posts/:postID", element: <MainPost /> },
-		{ path: "*", element: <NotFound /> },
-	]);
+	let router = useRoutes([]);
 
 	return (
 		<Container className="mt-5">
 			<Link to="/">
-				<Button color="warning" variant="contained" startIcon={<Home />}>
+				<Button color="primary" variant="contained" startIcon={<Home />}>
 					Home
 				</Button>
 			</Link>
 			<Link to="/users">
-				<Button color="primary" variant="contained" startIcon={<People />}>
+				<Button color="success" variant="contained" startIcon={<People />}>
 					Users
 				</Button>
 			</Link>
 			<Link to="/table">
-				<Button
-					color="secondary"
-					variant="contained"
-					startIcon={<TableChart />}
-				>
+				<Button color="warning" variant="contained" startIcon={<TableChart />}>
 					Table
 				</Button>
 			</Link>
 			<Link to="/posts">
-				<Button color="success" variant="contained" startIcon={<DynamicFeed />}>
+				<Button color="error" variant="contained" startIcon={<DynamicFeed />}>
 					Posts
+				</Button>
+			</Link>
+			<Link to="/about">
+				<Button color="secondary" variant="contained" startIcon={<Info />}>
+					About
 				</Button>
 			</Link>
 
@@ -58,7 +48,7 @@ export default function Main() {
 			{/* در پروژه های بزرگ روت هارا از فایل دیگری ایمپورت میکنیم */}
 			<br />
 			<br />
-			<h1>Test Project with REACT</h1>
+			<h1>Test Project by REACT</h1>
 		</Container>
 	);
 }
