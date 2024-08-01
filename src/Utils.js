@@ -1,9 +1,10 @@
-export const userIsLogin = (username) => {
-	// UsersData.some(user => {
-	//     return user.name == username
-	// })
+export const canSeePosts = () => {
 
-	if (username == "yashar") {
+	let userCode = prompt("Enter the Code to see posts : \nGuide : It;s My Birthday");
+
+
+	if (userCode == 1382) {
 		return true;
 	}
+	return false
 };

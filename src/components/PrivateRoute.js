@@ -1,22 +1,26 @@
-import React from "react";
-import { userIsLogin } from "../Utils";
+import React, { useEffect, useState } from "react";
+import { canSeePosts } from "../Utils";
 import { Link, Outlet } from "react-router-dom";
 import { Alert } from "@mui/material";
 
 export default function PrivateRoute({ children }) {
-	let checkUser = userIsLogin("yashar");
-	console.log(checkUser);
+	const [checkUser, setCheck] = useState(false);
+
+	useEffect(() => {
+		setCheck(canSeePosts());
+		console.log(checkUser);
+	}, []);
 
 	return (
 		<div>
 			<br />
 			<br />
 			{checkUser ? (
-				children 
+				children
 			) : (
 				<Link to="/" style={{ color: "black", textDecoration: "none" }}>
 					<Alert severity="error">
-						You are not Login, Please Click here and Go to Home
+						Please Enter the right Code :) 
 					</Alert>
 				</Link>
 			)}
