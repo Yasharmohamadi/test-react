@@ -3,6 +3,7 @@ import Users from "./Users";
 import TableGrid from "./TableGrid";
 import Posts from "./Posts";
 import MainPost from "./MainPost";
+import NotFound from "./NotFound";
 import { Route, Routes, Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "@mui/material";
@@ -42,6 +43,7 @@ export default function Main() {
 				<Route path="/table" element={<TableGrid />} />
 				<Route path="/posts" element={<Posts />} />
 				<Route path="/posts/:postID" element={<MainPost />} />
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<br />
 			<br />
