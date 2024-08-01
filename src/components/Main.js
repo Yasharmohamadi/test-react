@@ -19,12 +19,13 @@ export default function Main() {
 		<Container className="mt-5">
 			<NavLink
 				className={`button ${(link) => (link.isActive ? "active" : "")}`}
-				to="/"
+				to="/home"
 			>
 				<Button color="primary" variant="contained" startIcon={<Home />}>
 					Home
 				</Button>
 			</NavLink>
+
 			<NavLink className="button" to="/users">
 				<Button color="success" variant="contained" startIcon={<People />}>
 					Users

@@ -27,6 +27,8 @@ export default function PrivateRoute({ children }) {
 						variant="outlined"
 						onClick={() => {
 							navigate("/posts");
+							// navigate(-1); back to previous page
+							// navigate(-1, {replace: true/false}); store page in history and navigate
 						}}
 					>
 						try again

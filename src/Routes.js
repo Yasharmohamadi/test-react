@@ -1,3 +1,4 @@
+import Home from "./components/Home";
 import Users from "./components/Users";
 import TableGrid from "./components/TableGrid";
 import Posts from "./components/Posts";
@@ -7,7 +8,8 @@ import NotFound from "./components/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
 
 let routes = [
-	{ path: "/" },
+	{ path: "/", element: <Home /> },
+	{ path: "/home", element: <Home /> },
 	{ path: "/users", element: <Users /> },
 	{ path: "/table", element: <TableGrid /> },
 	{

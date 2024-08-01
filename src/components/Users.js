@@ -60,7 +60,14 @@ export default function Users() {
 					</Table>
 				</div>
 			) : (
-				<Alert severity="error">This is an error Alert.</Alert>
+				<Alert severity="error">
+					an Error appeared in Receiving Datas from{" "}
+					<a href="https://jsonplaceholder.typicode.com/">
+						jsonplaceholder.typicode.com.
+					</a>
+					<br />
+					Please Check Your Internet Connection !
+				</Alert>
 			)}
 		</div>
 	);
