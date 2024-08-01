@@ -3,7 +3,7 @@ import "./style.css";
 import routes from "../Routes";
 import { Route, Routes, Link, useRoutes, NavLink } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import { Button } from "@mui/material";
+import { Alert, Button } from "@mui/material";
 import {
 	TableChart,
 	People,
@@ -17,27 +17,30 @@ export default function Main() {
 
 	return (
 		<Container className="mt-5">
-			<NavLink className={`button ${(link) => (link.isActive ? "active" : "")}`} to="/">
+			<NavLink
+				className={`button ${(link) => (link.isActive ? "active" : "")}`}
+				to="/"
+			>
 				<Button color="primary" variant="contained" startIcon={<Home />}>
 					Home
 				</Button>
 			</NavLink>
-			<NavLink className='button' to="/users">
+			<NavLink className="button" to="/users">
 				<Button color="success" variant="contained" startIcon={<People />}>
 					Users
 				</Button>
 			</NavLink>
-			<NavLink className='button' to="/table">
+			<NavLink className="button" to="/table">
 				<Button color="warning" variant="contained" startIcon={<TableChart />}>
 					Table
 				</Button>
 			</NavLink>
-			<NavLink className='button' to="/posts">
+			<NavLink className="button" to="/posts">
 				<Button color="error" variant="contained" startIcon={<DynamicFeed />}>
 					Posts
 				</Button>
 			</NavLink>
-			<NavLink className='button' to="/about">
+			<NavLink className="button" to="/about">
 				<Button color="secondary" variant="contained" startIcon={<Info />}>
 					About
 				</Button>
@@ -54,11 +57,12 @@ export default function Main() {
 					<Route path="dashboard" element={<h3>Dashboard</h3>} />
 				</Route>
 			</Routes> */}
+			<hr />
 
 			{router}
-			<br />
-			<br />
-			<h1>Test Project by REACT</h1>
+
+			<hr />
+			<Alert severity="info">Test Project by REACT</Alert>
 		</Container>
 	);
 }

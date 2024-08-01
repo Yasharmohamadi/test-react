@@ -8,7 +8,6 @@ export default function Posts() {
 
 	return (
 		<div>
-			<br />
 			{posts.length > 0 &&
 				posts.map((post) => (
 					<div key={post.id}>

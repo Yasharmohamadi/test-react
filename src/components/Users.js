@@ -25,14 +25,12 @@ export default function Users() {
 
 	return (
 		<div>
-			<br />
-
 			{users.length > 0 ? (
 				<div>
 					<Alert variant="filled" severity="success">
 						We Got your Users.
 					</Alert>
-					<br />
+
 					<Table striped bordered hover>
 						<thead>
 							<tr>
