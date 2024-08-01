@@ -4,12 +4,21 @@ import TableGrid from "./TableGrid";
 import Posts from "./Posts";
 import MainPost from "./MainPost";
 import NotFound from "./NotFound";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, useRoutes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "@mui/material";
 import { TableChart, People, Home, DynamicFeed } from "@mui/icons-material";
 
 export default function Main() {
+	let router = useRoutes([
+		{ path: "/" },
+		{ path: "/users", element: <Users /> },
+		{ path: "/table", element: <TableGrid /> },
+		{ path: "/posts", element: <Posts /> },
+		{ path: "/posts/:postID", element: <MainPost /> },
+		{ path: "*", element: <NotFound /> },
+	]);
+
 	return (
 		<Container className="mt-5">
 			<Link to="/">
@@ -37,14 +46,16 @@ export default function Main() {
 				</Button>
 			</Link>
 
-			<Routes>
+			{/* <Routes>
 				<Route path="/" />
 				<Route path="/users" element={<Users />} />
 				<Route path="/table" element={<TableGrid />} />
 				<Route path="/posts" element={<Posts />} />
 				<Route path="/posts/:postID" element={<MainPost />} />
 				<Route path="*" element={<NotFound />} />
-			</Routes>
+			</Routes> */}
+			{router}
+			{/* در پروژه های بزرگ روت هارا از فایل دیگری ایمپورت میکنیم */}
 			<br />
 			<br />
 			<h1>Test Project with REACT</h1>
