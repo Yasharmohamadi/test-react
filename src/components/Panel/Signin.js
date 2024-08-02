@@ -10,12 +10,12 @@ export default function Signin() {
 
 		let newUser = [username, email, password];
 
-		fetch("https://react-app-e0af5-default-rtdb.firebaseio.com/users.json", {
-			method: "POST",
-			body: JSON.stringify(newUser),
-		})
-			.then((response) => console.log(response))
-			.fetch((error) => console.log(error));
+		// fetch("https://react-app-e0af5-default-rtdb.firebaseio.com/users.json", {
+		// 	method: "POST",
+		// 	body: JSON.stringify(newUser),
+		// })
+		// 	.then((response) => console.log(response))
+		// 	.fetch((error) => console.log(error));
 	};
 
 	return (
