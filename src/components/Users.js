@@ -25,6 +25,8 @@ export default function Users() {
 
 	return (
 		<div>
+			<h1>Users</h1>
+
 			{users.length > 0 ? (
 				<div>
 					<Alert variant="filled" severity="success">

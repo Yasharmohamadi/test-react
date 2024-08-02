@@ -1,11 +1,13 @@
 import Home from "./components/Home";
 import Users from "./components/Users";
 import TableGrid from "./components/TableGrid";
-import Posts from "./components/Posts";
-import MainPost from "./components/MainPost";
-import About from "./components/About";
+import Posts from "./components/Postss/Posts";
+import MainPost from "./components/Postss/MainPost";
+import Panel from "./components/Panel/Panel";
 import NotFound from "./components/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
+import Login from "./components/Panel/Login";
+import Signin from "./components/Panel/Signin";
 
 let routes = [
 	{ path: "/", element: <Home /> },
@@ -22,11 +24,11 @@ let routes = [
 	},
 	{ path: "/posts/:postID", element: <MainPost /> },
 	{
-		path: "/about/*",
-		element: <About />,
+		path: "/panel/*",
+		element: <Panel />,
 		children: [
-			{ path: "setting", element: <h3>Setting</h3> },
-			{ path: "dashboard", element: <h3>Dashboard</h3> },
+			{ path: "login", element: <Login /> },
+			{ path: "signin", element: <Signin /> },
 		],
 	},
 	{ path: "*", element: <NotFound /> },

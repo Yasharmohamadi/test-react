@@ -1,19 +1,19 @@
 import React from "react";
-import { Link, Outlet} from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Button } from "@mui/material";
 
-export default function About() {
+export default function Panel() {
 	return (
 		<div>
-			<h1>About</h1>
-			<Link to="dashboard">
+			<h1>Panel</h1>
+			<Link to="signin">
 				<Button color="secondary" variant="outlined">
-					Dashboard
+					Signin
 				</Button>
 			</Link>
-			<Link to="setting">
+			<Link to="login">
 				<Button color="secondary" variant="outlined">
-					Setting
+					Login
 				</Button>
 			</Link>
 			<Outlet />

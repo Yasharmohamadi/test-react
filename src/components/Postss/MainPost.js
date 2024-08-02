@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import {PostsData} from "../Data";
-import {
-	Card,
-	Typography,
-	Button,
-	CardContent,
-} from "@mui/material";
+import { PostsData } from "../../Data";
+import { Card, Typography, Button, CardContent } from "@mui/material";
 
 export default function MainPost() {
 	const [posts, setPost] = useState(PostsData);

@@ -9,7 +9,7 @@ import {
 	People,
 	Home,
 	DynamicFeed,
-	Info,
+	AccountCircle,
 } from "@mui/icons-material";
 
 export default function Main() {
@@ -41,9 +41,9 @@ export default function Main() {
 					Posts
 				</Button>
 			</NavLink>
-			<NavLink className="button" to="/about">
-				<Button color="secondary" variant="contained" startIcon={<Info />}>
-					About
+			<NavLink className="button" to="/panel">
+				<Button color="secondary" variant="contained" startIcon={<AccountCircle />}>
+				Panel
 				</Button>
 			</NavLink>
 			{/* <Routes>
