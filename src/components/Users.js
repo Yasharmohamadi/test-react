@@ -32,7 +32,7 @@ export default function Users() {
 					<Alert variant="filled" severity="success">
 						We Got your Users.
 					</Alert>
-
+					<br />
 					<Table striped bordered hover>
 						<thead>
 							<tr>

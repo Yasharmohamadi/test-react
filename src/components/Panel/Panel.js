@@ -1,18 +1,19 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button } from "react-bootstrap";
+import "../style.css";
 
 export default function Panel() {
 	return (
 		<div>
 			<h1>Panel</h1>
 			<Link to="signin">
-				<Button color="secondary" variant="outlined">
+				<Button variant="secondary" >
 					Signin
 				</Button>
 			</Link>
-			<Link to="login">
-				<Button color="secondary" variant="outlined">
+			<Link to="login" className="button">
+				<Button variant="secondary" >
 					Login
 				</Button>
 			</Link>

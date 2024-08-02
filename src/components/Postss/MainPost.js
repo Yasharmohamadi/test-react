@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { PostsData } from "../../Data";
-import { Card, Typography, Button, CardContent } from "@mui/material";
+import { Card, Typography, CardContent } from "@mui/material";
+import { Button } from "react-bootstrap";
+
 
 export default function MainPost() {
 	const [posts, setPost] = useState(PostsData);
@@ -23,7 +25,7 @@ export default function MainPost() {
 							{mainPost.id}
 						</Typography>
 						<Link to="/posts">
-							<Button color="success" variant="contained">
+							<Button variant="secondary">
 								Back to Posts
 							</Button>
 						</Link>

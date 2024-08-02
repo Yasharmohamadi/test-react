@@ -27,22 +27,22 @@ export default function Main() {
 			</NavLink>
 
 			<NavLink className="button" to="/users">
-				<Button color="success" variant="contained" startIcon={<People />}>
+				<Button color="primary" variant="contained" startIcon={<People />}>
 					Users
 				</Button>
 			</NavLink>
 			<NavLink className="button" to="/table">
-				<Button color="warning" variant="contained" startIcon={<TableChart />}>
+				<Button color="primary" variant="contained" startIcon={<TableChart />}>
 					Table
 				</Button>
 			</NavLink>
 			<NavLink className="button" to="/posts">
-				<Button color="error" variant="contained" startIcon={<DynamicFeed />}>
+				<Button color="primary" variant="contained" startIcon={<DynamicFeed />}>
 					Posts
 				</Button>
 			</NavLink>
 			<NavLink className="button" to="/panel">
-				<Button color="secondary" variant="contained" startIcon={<AccountCircle />}>
+				<Button color="primary" variant="contained" startIcon={<AccountCircle />}>
 				Panel
 				</Button>
 			</NavLink>
