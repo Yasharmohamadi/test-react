@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import "../style.css";
+import "../../style.css";
 
 export default function Panel() {
 	return (

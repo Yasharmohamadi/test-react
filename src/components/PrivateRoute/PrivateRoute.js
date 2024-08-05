@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { canSeePosts } from "../Utils";
+import { canSeePosts } from "../../Utils";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Alert, Button } from "@mui/material";
 

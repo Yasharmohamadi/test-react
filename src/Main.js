@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
-import routes from "../Routes";
+import routes from "./Routes";
 import { Route, Routes, Link, useRoutes, NavLink } from "react-router-dom";
 
 import { Container } from "react-bootstrap";

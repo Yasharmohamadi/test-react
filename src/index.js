@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import Main from "./components/Main";
+import Main from "./Main";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 // FIRST WAY TO USE REACT

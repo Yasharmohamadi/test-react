@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
-import { UsersData } from "../Data";
+import { UsersData } from "../../Data";
 import { Modal } from "react-bootstrap";
 
 export default function TableGrid(props) {
