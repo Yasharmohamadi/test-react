@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import routes from "../Routes";
 import { Route, Routes, Link, useRoutes, NavLink } from "react-router-dom";
+
 import { Container } from "react-bootstrap";
 import { Alert, Button } from "@mui/material";
 import {
@@ -10,6 +11,7 @@ import {
 	Home,
 	DynamicFeed,
 	AccountCircle,
+	TrendingUp
 } from "@mui/icons-material";
 
 export default function Main() {
@@ -42,8 +44,17 @@ export default function Main() {
 				</Button>
 			</NavLink>
 			<NavLink className="button" to="/panel">
-				<Button color="primary" variant="contained" startIcon={<AccountCircle />}>
-				Panel
+				<Button
+					color="primary"
+					variant="contained"
+					startIcon={<AccountCircle />}
+				>
+					Panel
+				</Button>
+			</NavLink>
+			<NavLink className="button" to="/charts">
+				<Button color="primary" variant="contained" startIcon={<TrendingUp />}>
+					Charts
 				</Button>
 			</NavLink>
 			{/* <Routes>

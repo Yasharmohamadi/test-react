@@ -8,12 +8,14 @@ import NotFound from "./components/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Panel/Login";
 import Signin from "./components/Panel/Signin";
+import Charts from "./components/Charts/Charts";
 
 let routes = [
 	{ path: "/", element: <Home /> },
 	{ path: "/home", element: <Home /> },
 	{ path: "/users", element: <Users /> },
 	{ path: "/table", element: <TableGrid /> },
+	{ path: "/charts", element: <Charts /> },
 	{
 		path: "/posts",
 		element: (
