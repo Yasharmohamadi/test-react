@@ -1,0 +1,12 @@
+.uselocal_hook {
+	display: flex;
+	align-items: center;
+	.local-input {
+		border-radius: 0.375rem;
+		border: 1px solid rgba(25, 118, 210, 0.522);
+		outline: none;
+		height: 36.5px;
+		padding: 10px;
+		color: rgba(25, 118, 210, 0.976);
+	}
+}
