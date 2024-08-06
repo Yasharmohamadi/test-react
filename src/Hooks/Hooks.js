@@ -96,7 +96,7 @@ export default function Hooks() {
 				</Button>
 				<br />
 
-				<Button style={{marginLeft: '5px !important'}} onClick={firstNumHandler} variant="outlined">
+				<Button style={{marginLeft: '5px'}} onClick={firstNumHandler} variant="outlined">
 					First Number = {firstNum}
 				</Button>
 				<Button disabled variant="outlined">
@@ -105,7 +105,7 @@ export default function Hooks() {
 
 				<br />
 
-				<Button style={{marginLeft: '5px !important'}} onClick={secondNumHandler} variant="outlined">
+				<Button style={{marginLeft: '5px'}} onClick={secondNumHandler} variant="outlined">
 					Second Number = {secondNum}
 				</Button>
 				<Button disabled variant="outlined">
