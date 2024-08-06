@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-export default function useFetch() {
+export default function useFetch(url) {
 	const [posts, setPosts] = useState(null);
-	const [pending, setPending] = useState(true);
+	const [isPending, setPending] = useState(true);
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		setInterval(() => {
-			fetch("https://jsonplaceholder.typicode.com/users")
+			fetch(url)
 				.then((response) => response.json())
 				.then((datas) => {
 					console.log(datas);
@@ -19,5 +19,5 @@ export default function useFetch() {
 		}, 1500);
 	}, []);
 
-	return [posts, pending, error];
+	return [posts, isPending, error];
 }

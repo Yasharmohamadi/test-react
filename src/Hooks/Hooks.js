@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useCounter from "./useCounter";
 import useFetch from "./useFetch";
-import { Alert, Button } from "@mui/material";
+import { Button } from "@mui/material";
 
 export default function Hooks() {
 	const [count, inc, dec] = useCounter(0);
-	const [posts, pending, error] = useFetch();
+	const [posts, isPending, error] = useFetch(
+		"https://jsonplaceholder.typicode.com/users"
+	);
 
 	return (
 		<div>
@@ -34,7 +36,7 @@ export default function Hooks() {
 						Error !
 					</Button>
 				)}
-				{pending && (
+				{isPending && (
 					<Button disabled variant="outlined">
 						Pending ...
 					</Button>
@@ -42,7 +44,7 @@ export default function Hooks() {
 				{posts &&
 					posts.map((post) => (
 						<Button key={post.id} disabled variant="outlined">
-							{post.name}
+							{post.id} - {post.name}
 						</Button>
 					))}
 			</div>
