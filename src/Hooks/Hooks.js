@@ -10,11 +10,11 @@ import {
 } from "@mui/icons-material";
 
 export default function Hooks() {
-	const [count, inc, dec] = useCounter(0);
+  const [count, inc, dec] = useCounter(0);
+  const [value, setValue] = useLocal('input-value');
 	const [posts, isPending, error] = useFetch(
-		"https://jsonplaceholder.typicode.com/users"
+    "https://jsonplaceholder.typicode.com/users"
 	);
-	const [value, setValue] = useLocal('input-value');
 
 	return (
 		<div>
@@ -25,8 +25,8 @@ export default function Hooks() {
 				<Button variant="outlined" onClick={dec}>
 					<RemoveCircleOutline className='counter_icons'/>
 				</Button>
-				<Button variant="outlined" disabled>
-					{count}{" "}
+				<Button variant="outlined" >
+					{count}
 				</Button>
 				<Button variant="outlined" onClick={inc}>
 					<AddCircleOutline className='counter_icons'/>
