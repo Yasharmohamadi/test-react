@@ -4,6 +4,10 @@ import useFetch from "./useFetch";
 import useLocal from "./useLocal";
 import { Button } from "@mui/material";
 import "./Hooks.css";
+import {
+	RemoveCircleOutline,
+	AddCircleOutline
+} from "@mui/icons-material";
 
 export default function Hooks() {
 	const [count, inc, dec] = useCounter(0);
@@ -15,22 +19,22 @@ export default function Hooks() {
 	return (
 		<div>
 			<div className="usecounter_hook">
-				<Button variant="contained" disabled>
+				<Button variant="contained" disabled className="hook_button">
 					useCounter hook :
 				</Button>
 				<Button variant="outlined" onClick={dec}>
-					-
+					<RemoveCircleOutline className='counter_icons'/>
 				</Button>
 				<Button variant="outlined" disabled>
 					{count}{" "}
 				</Button>
 				<Button variant="outlined" onClick={inc}>
-					+
+					<AddCircleOutline className='counter_icons'/>
 				</Button>
 			</div>
 			<hr />
 			<div className="usefetch_hook">
-				<Button variant="contained" disabled>
+				<Button variant="contained" disabled className="hook_button">
 					useFetch hook :
 				</Button>
 
@@ -46,14 +50,14 @@ export default function Hooks() {
 				)}
 				{posts &&
 					posts.map((post) => (
-						<Button key={post.id} disabled variant="outlined">
+						<Button key={post.id} variant="outlined" className="userfetch_button">
 							{post.id} - {post.name}
 						</Button>
 					))}
 			</div>
 			<hr />
 			<div className="uselocal_hook">
-				<Button disabled variant="contained">
+				<Button disabled variant="contained" className="hook_button">
 					useLocalStorage :
 				</Button>
 				<input
