@@ -2,19 +2,24 @@ import React from "react";
 import useCounter from "./useCounter";
 import { Alert, Button } from "@mui/material";
 
-
 export default function Hooks() {
-
-  const [count, inc, dec, reset] = useCounter(0)
+	const [count, inc, dec] = useCounter(0);
 
 	return (
 		<div>
-			<div>
-				<h1>useCounter hook :</h1>
-				<h3></h3>
-				<Button variant="outlined" onClick={inc}>+</Button>
-				<Button variant="outlined" onClick={reset}>{count} </Button>
-				<Button variant="outlined" onClick={dec}>-</Button>
+			<div className="usecounter_hook">
+				<Button variant="contained" disabled>
+					useCounter hook :
+				</Button>
+				<Button variant="outlined" onClick={dec}>
+					-
+				</Button>
+				<Button variant="outlined" disabled>
+					{count}{" "}
+				</Button>
+				<Button variant="outlined" onClick={inc}>
+					+
+				</Button>
 			</div>
 		</div>
 	);

@@ -9,9 +9,6 @@ export default function useCounter(defaultValue) {
 	const dec = () => {
 		setCount((preCount) => preCount - 1);
 	};
-	const reset = () => {
-		setCount(0);
-	};
 
-	return [count, inc, dec, reset];
+	return [count, inc, dec];
 }
