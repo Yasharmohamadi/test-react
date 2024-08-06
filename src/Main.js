@@ -11,7 +11,7 @@ import {
 	Home,
 	DynamicFeed,
 	AccountCircle,
-	TrendingUp
+	TrendingUp,
 } from "@mui/icons-material";
 
 export default function Main() {
@@ -19,44 +19,81 @@ export default function Main() {
 
 	return (
 		<Container className="mt-5">
-			<NavLink
-				className={`button ${(link) => (link.isActive ? "active" : "")}`}
-				to="/home"
-			>
-				<Button color="primary" variant="contained" startIcon={<Home />}>
-					Home
-				</Button>
-			</NavLink>
+			<div className="buttons">
+				<div className="button">
+					<NavLink
+						className={`${(link) => (link.isActive ? "active" : "")}`}
+						to="/home"
+					>
+						<Button color="primary" variant="contained" startIcon={<Home />}>
+							Home
+						</Button>
+					</NavLink>
+				</div>
+				<div className="button">
+					<NavLink to="/users">
+						<Button color="primary" variant="contained" startIcon={<People />}>
+							Users
+						</Button>
+					</NavLink>
+				</div>
+				<div className="button">
+					<NavLink  to="/table">
+						<Button
+							color="primary"
+							variant="contained"
+							startIcon={<TableChart />}
+						>
+							Table
+						</Button>
+					</NavLink>
+				</div>
+				<div className="button">
+					<NavLink  to="/posts">
+						<Button
+							color="primary"
+							variant="contained"
+							startIcon={<DynamicFeed />}
+						>
+							Posts
+						</Button>
+					</NavLink>
+				</div>
+				<div className="button">
+					<NavLink to="/panel">
+						<Button
+							color="primary"
+							variant="contained"
+							startIcon={<AccountCircle />}
+						>
+							Panel
+						</Button>
+					</NavLink>
+				</div>
+				<div className="button">
+					<NavLink  to="/charts">
+						<Button
+							color="primary"
+							variant="contained"
+							startIcon={<TrendingUp />}
+						>
+							Charts
+						</Button>
+					</NavLink>
+				</div>
+				<div className="button">
+					<NavLink  to="/hooks">
+						<Button
+							color="primary"
+							variant="contained"
+							startIcon={<TrendingUp />}
+						>
+							Hooks
+						</Button>
+					</NavLink>
+				</div>
+			</div>
 
-			<NavLink className="button" to="/users">
-				<Button color="primary" variant="contained" startIcon={<People />}>
-					Users
-				</Button>
-			</NavLink>
-			<NavLink className="button" to="/table">
-				<Button color="primary" variant="contained" startIcon={<TableChart />}>
-					Table
-				</Button>
-			</NavLink>
-			<NavLink className="button" to="/posts">
-				<Button color="primary" variant="contained" startIcon={<DynamicFeed />}>
-					Posts
-				</Button>
-			</NavLink>
-			<NavLink className="button" to="/panel">
-				<Button
-					color="primary"
-					variant="contained"
-					startIcon={<AccountCircle />}
-				>
-					Panel
-				</Button>
-			</NavLink>
-			<NavLink className="button" to="/charts">
-				<Button color="primary" variant="contained" startIcon={<TrendingUp />}>
-					Charts
-				</Button>
-			</NavLink>
 			{/* <Routes>
 				<Route path="/" />
 				<Route path="/users" element={<Users />} />

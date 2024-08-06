@@ -1,6 +1,10 @@
 .active {
     box-shadow: 0 15px 10px black;
 }
-.button {
-    margin: 5px
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
 }

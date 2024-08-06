@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Login from "./components/Panel/Login";
 import Signin from "./components/Panel/Signin";
 import Charts from "./components/Charts/Charts";
+import Hooks from './Hooks/Hooks'
 
 let routes = [
 	{ path: "/", element: <Home /> },
@@ -33,6 +34,7 @@ let routes = [
 			{ path: "signin", element: <Signin /> },
 		],
 	},
+	{ path: "/hooks", element: <Hooks /> },
 	{ path: "*", element: <NotFound /> },
 ];
 
