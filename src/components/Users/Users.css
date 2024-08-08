@@ -1,0 +1,29 @@
+.pagination_container {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination_btn {
+    padding: 5px 10px;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.165);
+    text-decoration: none;
+    color: black;
+
+}
+
+.pagination_btn:hover {
+    background: #dcdcdc;
+}
+
+.pagination_btn:nth-child(1) {
+    border-radius: 5px 0 0 5px;
+}
+.pagination_btn:last-child {
+    border-radius: 0 5px 5px 0 ;
+}
+
+.selected {
+    background: #b6b6b6;
+
+}

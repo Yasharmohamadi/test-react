@@ -15,6 +15,7 @@ export default function Hooks() {
 	const [posts, isPending, error] = useFetch(
 		"https://jsonplaceholder.typicode.com/users"
 	);
+
 	// use memo_hook states
 	const [firstNum, setfirstNum] = useState(0);
 	const [secondNum, setSecondNum] = useState(0);
@@ -30,10 +31,10 @@ export default function Hooks() {
 			index++;
 		}
 
-		return firstNum % 2 == 0;
+		return firstNum % 2 === 0;
 	}, [firstNum]);
 	const secondIsEven = () => {
-		return secondNum % 2 == 0;
+		return secondNum % 2 === 0;
 	};
 	// use ref_hook
 	const refInput = useRef();
@@ -59,7 +60,7 @@ export default function Hooks() {
 
 	useEffect(() => {
 		// setRenderCount(pre => pre + 1)
-		renderCount.current = renderCount.current + 1; 
+		renderCount.current = renderCount.current + 1;
 	}, [inputTitle]);
 
 	return (
@@ -92,6 +93,7 @@ export default function Hooks() {
 						Pending ...
 					</Button>
 				)}
+				<br />
 				{posts &&
 					posts.map((post) => (
 						<Button
@@ -160,7 +162,6 @@ export default function Hooks() {
 				</Button>
 			</div>
 			<hr />
-
 			<div className="useref_hook">
 				<div className="useref-wrapper">
 					<Button disabled variant="contained" className="hook_button">

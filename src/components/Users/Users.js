@@ -2,16 +2,24 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { Person, Delete } from "@mui/icons-material";
 import { Alert } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import "./Users.css";
 
 export default function Users() {
 	const [users, setUsers] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [pageiniatedTodos, setPageiniatedTodos] = useState([]);
+	let pageSize = 3;
+	let pagesNumbers;
 
 	useEffect(() => {
 		fetch("https://jsonplaceholder.typicode.com/users", {
 			method: "GET",
 		})
 			.then((response) => response.json())
-			.then((data) => setUsers(data))
+			.then((datas) => {
+				setUsers(datas);
+			})
 			.catch((err) => console.log(err));
 	}, []);
 
@@ -21,6 +29,13 @@ export default function Users() {
 		});
 
 		setUsers(filteredUsers);
+	};
+
+	const pagesCount = Math.ceil(users.length / pageSize);
+	pagesNumbers = Array.from(Array(pagesCount).keys());
+
+	const changePaginate = (newPage) => {
+		setCurrentPage(newPage);
 	};
 
 	return (
@@ -60,6 +75,21 @@ export default function Users() {
 							))}
 						</tbody>
 					</Table>
+					<div className="pagination_container">
+						{pagesNumbers.map((pageNumber) => (
+							<NavLink
+								variant="outlined"
+								className={
+									pageNumber + 1 === currentPage
+										? "pagination_btn selected"
+										: "pagination_btn"
+								}
+								onClick={() => changePaginate(pageNumber + 1)}
+							>
+								{pageNumber + 1}
+							</NavLink>
+						))}
+					</div>
 				</div>
 			) : (
 				<Alert severity="error">
