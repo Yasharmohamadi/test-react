@@ -1,16 +1,20 @@
-.uselocal_hook {
+.uselocal_hook, .useref-wrapper {
 	display: flex;
 	align-items: center;
-	.local-input {
-		border-radius: 0.375rem;
-		border: 1px solid rgba(25, 118, 210, 0.5);
-		outline: none;
-		height: 36.5px;
-		padding: 10px;
-		color: #1976d2;
+}
+.input {
+	border-radius: 0.375rem;
+	border: 1px solid rgba(25, 118, 210, 0.5);
+	outline: none;
+	height: 36.5px;
+	padding: 10px;
+	color: #1976d2;
 
-		font-weight: 500;
-	}
+	font-weight: 500;
+}
+
+.input::placeholder {
+	color: rgba(0, 0, 0, 0.26);
 }
 
 .userfetch_button {
@@ -20,4 +24,13 @@
 
 .hook_button {
 	margin: 5px !important;
+}
+
+.input:focus {
+	border: 2px solid rgba(25, 118, 210, 1);
+
+}
+
+.bg_blue {
+	background: rgba(25, 118, 210, 0.347);
 }

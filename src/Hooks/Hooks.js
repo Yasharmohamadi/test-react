@@ -11,19 +11,13 @@ export default function Hooks() {
 	const [count, inc, dec] = useCounter(0);
 	// use local_hook state
 	const [value, setValue] = useLocal("input-value");
-	const useLocalInput = useRef();
-	useEffect(() => {
-		useLocalInput.current.focus();
-	}, []);
 	// use fetch_hook state
 	const [posts, isPending, error] = useFetch(
 		"https://jsonplaceholder.typicode.com/users"
 	);
-
 	// use memo_hook states
 	const [firstNum, setfirstNum] = useState(0);
 	const [secondNum, setSecondNum] = useState(0);
-
 	const firstNumHandler = () => {
 		setfirstNum((pre) => pre + 1);
 	};
@@ -41,6 +35,26 @@ export default function Hooks() {
 	const secondIsEven = () => {
 		return secondNum % 2 == 0;
 	};
+	// use ref_hook 
+	const refInput = useRef();
+	useEffect(() => {
+		refInput.current.focus();
+	}, []);
+	const addNewValue = () => {
+		refInput.current.value = 'New Value'
+	}
+	const delNewValue = () => {
+		refInput.current.value = ''
+	}
+	const addClass = () => {
+		refInput.current.classList.add('bg_blue')
+	}
+	const delClass = () => {
+		refInput.current.classList.remove('bg_blue')
+
+	}
+
+
 
 	return (
 		<div>
@@ -89,8 +103,7 @@ export default function Hooks() {
 					use LocalStorage hook :
 				</Button>
 				<input
-					ref={useLocalInput}
-					className="local-input"
+					className="input"
 					value={value}
 					onChange={(event) => setValue(event.target.value)}
 					maxLength={20}
@@ -138,6 +151,34 @@ export default function Hooks() {
 				</Button>
 				<Button variant="outlined" onClick={dec} disabled>
 					save function
+				</Button>
+			</div>
+			<hr />
+
+			<div className="useref_hook">
+				<div className="useref-wrapper">
+				<Button disabled variant="contained" className="hook_button">
+					use Ref hook :
+				</Button>
+				<input
+					ref={refInput}
+					className="input ref_input"
+					maxLength={20}
+					placeholder="TYPE HERE ..."
+				/>
+				</div>
+				<Button  variant="outlined" className="hook_button" onClick={addNewValue}>
+					add 'new value'
+				</Button>
+				<Button  variant="outlined" className="hook_button" onClick={delNewValue}>
+					del 'new value'
+				</Button>
+				<br />
+				<Button  variant="outlined" className="hook_button" onClick={addClass}>
+					add 'bg_blue' class
+				</Button>
+				<Button  variant="outlined" className="hook_button" onClick={delClass}>
+					del 'bg_blue' class
 				</Button>
 			</div>
 		</div>
