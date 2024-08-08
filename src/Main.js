@@ -12,6 +12,7 @@ import {
 	DynamicFeed,
 	AccountCircle,
 	TrendingUp,
+	Webhook
 } from "@mui/icons-material";
 
 export default function Main() {
@@ -86,7 +87,7 @@ export default function Main() {
 						<Button
 							color="primary"
 							variant="contained"
-							startIcon={<TrendingUp />}
+							startIcon={<Webhook />}
 						>
 							Hooks
 						</Button>
