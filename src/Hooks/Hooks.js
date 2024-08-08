@@ -35,26 +35,32 @@ export default function Hooks() {
 	const secondIsEven = () => {
 		return secondNum % 2 == 0;
 	};
-	// use ref_hook 
+	// use ref_hook
 	const refInput = useRef();
 	useEffect(() => {
 		refInput.current.focus();
 	}, []);
 	const addNewValue = () => {
-		refInput.current.value = 'New Value'
-	}
+		refInput.current.value = "New Value";
+	};
 	const delNewValue = () => {
-		refInput.current.value = ''
-	}
+		refInput.current.value = "";
+	};
 	const addClass = () => {
-		refInput.current.classList.add('bg_blue')
-	}
+		refInput.current.classList.add("bg_blue");
+	};
 	const delClass = () => {
-		refInput.current.classList.remove('bg_blue')
+		refInput.current.classList.remove("bg_blue");
+	};
 
-	}
+	const [inputTitle, setInputTitle] = useState("");
+	// const [renderCount, setRenderCount] = useState(1);
+	const renderCount = useRef(0);
 
-
+	useEffect(() => {
+		// setRenderCount(pre => pre + 1)
+		renderCount.current = renderCount.current + 1; 
+	}, [inputTitle]);
 
 	return (
 		<div>
@@ -157,28 +163,50 @@ export default function Hooks() {
 
 			<div className="useref_hook">
 				<div className="useref-wrapper">
-				<Button disabled variant="contained" className="hook_button">
-					use Ref hook :
-				</Button>
-				<input
-					ref={refInput}
-					className="input ref_input"
-					maxLength={20}
-					placeholder="TYPE HERE ..."
-				/>
+					<Button disabled variant="contained" className="hook_button">
+						use Ref hook :
+					</Button>
+					<input
+						ref={refInput}
+						className="input ref_input"
+						maxLength={20}
+						placeholder="TYPE HERE ..."
+					/>
 				</div>
-				<Button  variant="outlined" className="hook_button" onClick={addNewValue}>
+				<Button
+					variant="outlined"
+					className="hook_button"
+					onClick={addNewValue}
+				>
 					add 'new value'
 				</Button>
-				<Button  variant="outlined" className="hook_button" onClick={delNewValue}>
+				<Button
+					variant="outlined"
+					className="hook_button"
+					onClick={delNewValue}
+				>
 					del 'new value'
 				</Button>
 				<br />
-				<Button  variant="outlined" className="hook_button" onClick={addClass}>
+				<Button variant="outlined" className="hook_button" onClick={addClass}>
 					add 'bg_blue' class
 				</Button>
-				<Button  variant="outlined" className="hook_button" onClick={delClass}>
+				<Button variant="outlined" className="hook_button" onClick={delClass}>
 					del 'bg_blue' class
+				</Button>
+				<br />
+
+				<input
+					className="input ref_input"
+					maxLength={20}
+					placeholder="TYPE HERE ..."
+					onChange={(event) => setInputTitle(event.target.value)}
+				/>
+				<Button variant="outlined" className="hook_button" disabled>
+					input render : {renderCount.current}
+				</Button>
+				<Button variant="outlined" className="hook_button" disabled>
+					input title : {inputTitle}
 				</Button>
 			</div>
 		</div>

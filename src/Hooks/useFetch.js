@@ -10,7 +10,7 @@ export default function useFetch(url) {
 			fetch(url)
 				.then((response) => response.json())
 				.then((datas) => {
-					console.log(datas);
+					// console.log(datas);
 					setPosts(datas);
 					setPending(false);
 					setError(null);
