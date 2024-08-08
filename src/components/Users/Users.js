@@ -13,12 +13,14 @@ export default function Users() {
 	let pagesNumbers;
 
 	useEffect(() => {
-		fetch("https://jsonplaceholder.typicode.com/users", {
-			method: "GET",
-		})
+		fetch("https://jsonplaceholder.typicode.com/users")
 			.then((response) => response.json())
 			.then((datas) => {
 				setUsers(datas);
+				let endIndex = pageSize * currentPage;
+				let startIndex = endIndex - pageSize;
+				let allShownTodos = datas.slice(startIndex, endIndex);
+				setPageiniatedTodos(allShownTodos);
 			})
 			.catch((err) => console.log(err));
 	}, []);
@@ -30,19 +32,23 @@ export default function Users() {
 
 		setUsers(filteredUsers);
 	};
-
-	const pagesCount = Math.ceil(users.length / pageSize);
-	pagesNumbers = Array.from(Array(pagesCount).keys());
-
+	
 	const changePaginate = (newPage) => {
 		setCurrentPage(newPage);
+		let endIndex = pageSize * currentPage;
+		let startIndex = endIndex - pageSize;
+		let allShownTodos = users.slice(startIndex, endIndex);
+		setPageiniatedTodos(allShownTodos);
 	};
+	
+		const pagesCount = Math.ceil(users.length / pageSize);
+		pagesNumbers = Array.from(Array(pagesCount).keys());
 
 	return (
 		<div>
 			<h1>Users</h1>
 
-			{users.length > 0 ? (
+			{!users ? (
 				<div>
 					<Alert variant="filled" severity="success">
 						We Got your Users.
@@ -59,7 +65,7 @@ export default function Users() {
 							</tr>
 						</thead>
 						<tbody>
-							{users.map((user) => (
+							{pageiniatedTodos.map((user) => (
 								<tr key={user.id}>
 									<td>{user.id}</td>
 									<td>
@@ -78,6 +84,7 @@ export default function Users() {
 					<div className="pagination_container">
 						{pagesNumbers.map((pageNumber) => (
 							<NavLink
+							key={pageNumber + 1}
 								variant="outlined"
 								className={
 									pageNumber + 1 === currentPage
