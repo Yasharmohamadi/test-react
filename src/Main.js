@@ -104,6 +104,17 @@ export default function Main() {
 						</Button>
 					</NavLink>
 				</div>
+				<div className="button">
+					<NavLink  to="/questions">
+						<Button
+							color="primary"
+							variant="contained"
+							startIcon={<Webhook />}
+						>
+							Questions
+						</Button>
+					</NavLink>
+				</div>
 			</div>
 
 			{/* <Routes>

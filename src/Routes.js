@@ -10,7 +10,8 @@ import Login from "./components/Panel/Login";
 import Signin from "./components/Panel/Signin";
 import Charts from "./components/Charts/Charts";
 import Hooks from './Hooks/Hooks'
-import Hocs from './components/Hocs/Hocs'
+import Hocs from './components/Hocs/Hocs' 
+import Questions from './Pages/Questions/Questions'
 
 let routes = [
 	{ path: "/", element: <Home /> },
@@ -37,6 +38,7 @@ let routes = [
 	},
 	{ path: "/hooks", element: <Hooks /> },
 	{ path: "/hocs", element: <Hocs /> },
+	{ path: "/questions", element: <Questions /> },
 	{ path: "*", element: <NotFound /> },
 ];
 
