@@ -4,6 +4,8 @@ import { Person, Delete } from "@mui/icons-material";
 import { Alert } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import "./Users.css";
+import { UsersData } from "../../Data";
+
 
 export default function Users() {
 	const [users, setUsers] = useState([]);
@@ -32,13 +34,16 @@ export default function Users() {
 
 		setUsers(filteredUsers);
 	};
-	
-	const changePaginate = (newPage) => {
-		setCurrentPage(newPage);
+
+	useEffect(() => {
 		let endIndex = pageSize * currentPage;
 		let startIndex = endIndex - pageSize;
 		let allShownTodos = users.slice(startIndex, endIndex);
 		setPageiniatedTodos(allShownTodos);
+	}, [currentPage])
+	
+	const changePaginate = (newPage) => {
+		setCurrentPage(newPage);
 	};
 	
 		const pagesCount = Math.ceil(users.length / pageSize);
