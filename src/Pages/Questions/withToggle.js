@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
 export default function withToggle(OriginalComponent) {
-	function NewComponent() {
-		const [isShow, setIsShow] = useState(false);
+	function NewComponent(props) {
 
-		const toggleHandler = () => {
-			setIsShow((prevValue) => !prevValue);
+		const [showInfos, setShowInfos] = useState(false);
+
+		const showHandler = () => {
+			setShowInfos((prevValue) => !prevValue);
 		};
-		return <OriginalComponent isShow={isShow} toggleHandler={toggleHandler} />;
+	
+		return <OriginalComponent showInfos={showInfos} showHandler={showHandler} {...props}/>;
 	}
 
 	return NewComponent;
