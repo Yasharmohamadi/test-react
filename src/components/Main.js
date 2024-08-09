@@ -12,7 +12,9 @@ import {
 	DynamicFeed,
 	AccountCircle,
 	TrendingUp,
-	Webhook
+	Webhook,
+	QuestionMark,
+	Functions,
 } from "@mui/icons-material";
 
 export default function Main() {
@@ -39,7 +41,7 @@ export default function Main() {
 					</NavLink>
 				</div>
 				<div className="button">
-					<NavLink  to="/table">
+					<NavLink to="/table">
 						<Button
 							color="primary"
 							variant="contained"
@@ -50,7 +52,7 @@ export default function Main() {
 					</NavLink>
 				</div>
 				<div className="button">
-					<NavLink  to="/posts">
+					<NavLink to="/posts">
 						<Button
 							color="primary"
 							variant="contained"
@@ -72,7 +74,7 @@ export default function Main() {
 					</NavLink>
 				</div>
 				<div className="button">
-					<NavLink  to="/charts">
+					<NavLink to="/charts">
 						<Button
 							color="primary"
 							variant="contained"
@@ -83,33 +85,29 @@ export default function Main() {
 					</NavLink>
 				</div>
 				<div className="button">
-					<NavLink  to="/hooks">
-						<Button
-							color="primary"
-							variant="contained"
-							startIcon={<Webhook />}
-						>
+					<NavLink to="/hooks">
+						<Button color="primary" variant="contained" startIcon={<Webhook />}>
 							Hooks
 						</Button>
 					</NavLink>
 				</div>
 				<div className="button">
-					<NavLink  to="/hocs">
+					<NavLink to="/hocs">
 						<Button
 							color="primary"
 							variant="contained"
-							startIcon={<Webhook />}
+							startIcon={<Functions />}
 						>
 							HOCs
 						</Button>
 					</NavLink>
 				</div>
 				<div className="button">
-					<NavLink  to="/questions">
+					<NavLink to="/questions">
 						<Button
 							color="primary"
 							variant="contained"
-							startIcon={<Webhook />}
+							startIcon={<QuestionMark />}
 						>
 							Questions
 						</Button>
