@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import ParentHoc from "./ParentHoc";
+import LibraryHoc from "./LibraryHoc";
 
 function Vuejs({ title }) {
 	return (
@@ -12,4 +12,4 @@ function Vuejs({ title }) {
 	);
 }
 
-export default ParentHoc(Vuejs, 'Vue js');
+export default LibraryHoc(Vuejs, "Vue js");

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import ParentHoc from "./ParentHoc";
+import LibraryHoc from "./LibraryHoc";
 
 function Reactjs({ title }) {
 	return (
@@ -12,4 +12,4 @@ function Reactjs({ title }) {
 	);
 }
 
-export default ParentHoc(Reactjs, 'React js');
+export default LibraryHoc(Reactjs, "React js");

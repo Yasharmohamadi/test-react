@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ParentHoc(OriginalComponent, libraryTitle) {
+function LibraryHoc(OriginalComponent, libraryTitle) {
 	function NewComponent() {
 		const [title, setTitle] = useState(libraryTitle);
 
@@ -10,4 +10,4 @@ function ParentHoc(OriginalComponent, libraryTitle) {
 	return NewComponent;
 }
 
-export default ParentHoc;
+export default LibraryHoc;

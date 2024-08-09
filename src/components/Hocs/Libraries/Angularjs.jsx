@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import { Button } from "@mui/material";
 
-import ParentHoc from './ParentHoc'
+import LibraryHoc from "./LibraryHoc";
 
-function Angularjs({title}) {
-    return (
+function Angularjs({ title }) {
+	return (
 		<div>
 			<Button variant="outlined" color="primary" className="hook_button">
 				{title}
@@ -13,4 +13,4 @@ function Angularjs({title}) {
 	);
 }
 
-export default ParentHoc(Angularjs, 'Angular js') 
+export default LibraryHoc(Angularjs, "Angular js");
