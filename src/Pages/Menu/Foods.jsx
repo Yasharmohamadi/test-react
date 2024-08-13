@@ -11,7 +11,11 @@ export default function Foods({ foodsDatas }) {
 					<div className="food_right">
 						<div className="food_header">
 							<h3 className="food_title">{food.title}</h3>
+							<div className="food_details">
 							<span className="food_price">${food.price}</span>
+							<span className="food_category">{food.category}</span>
+
+							</div>
 						</div>
 
 						<p className="food_desc">{food.desc}</p>
