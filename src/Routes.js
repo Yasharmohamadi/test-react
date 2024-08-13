@@ -12,6 +12,7 @@ import Charts from "./Pages/Charts/Charts";
 import Hooks from "./Pages/Hooks/Hooks";
 import Hocs from "./Pages/Hocs/Hocs";
 import Questions from "./Pages/Questions/Questions";
+import Menu from "./Pages/Menu/Menu";
 
 let routes = [
 	{ path: "/", element: <Home /> },
@@ -39,6 +40,7 @@ let routes = [
 	{ path: "/hooks", element: <Hooks /> },
 	{ path: "/hocs", element: <Hocs /> },
 	{ path: "/questions", element: <Questions /> },
+	{ path: "/menu", element: <Menu /> },
 	{ path: "*", element: <NotFound /> },
 ];
 

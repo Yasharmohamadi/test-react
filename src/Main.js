@@ -113,6 +113,17 @@ export default function Main() {
 						</Button>
 					</NavLink>
 				</div>
+				<div className="button">
+					<NavLink to="/menu">
+						<Button
+							color="primary"
+							variant="contained"
+							startIcon={<QuestionMark />}
+						>
+							Menu
+						</Button>
+					</NavLink>
+				</div>
 			</div>
 
 			{/* <Routes>
