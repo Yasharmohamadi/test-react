@@ -1,21 +1,23 @@
-.menu_nav {
+:root {
+	--green: #17bc7a;
 }
+
 .nav_btn {
-	border: 1px solid #19d288;
+	border: 1px solid var(--green);
 	outline: none;
 	border-radius: 5px;
 	margin-right: 5px !important;
 	background: #fff;
-	color: #19d288;
+	color: var(--green);
 	padding: 3px 7px;
 }
 .nav_btn:hover {
-	background: #19d28821;
+	background: #e6e6e6;
 }
 .highlight {
-	background: #19d288;
+	background: var(--green);
 	color: #fff;
 }
 .highlight:hover {
-	color: #19d288;
+	color: var(--green);
 }
