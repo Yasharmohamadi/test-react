@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Categories({ categories }) {
+export default function Categories({ categories, filterMenu }) {
 
 const [mainCategory, setMainCategory] = useState('all')
 
@@ -14,6 +14,7 @@ const [mainCategory, setMainCategory] = useState('all')
 					key={index}
                     onClick={() => {
                         setMainCategory(category)
+						filterMenu(category)
                     }}
 				>
 					{category}
