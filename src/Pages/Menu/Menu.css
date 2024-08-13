@@ -19,7 +19,9 @@
 	color: #fff;
 }
 .highlight:hover {
-	color: var(--green);
+	background: var(--green);
+
+	color: #fff;
 }
 
 /* foods styles */
@@ -54,17 +56,16 @@
 	border-radius: 5px;
 	margin-right: 15px;
 	border: 1px solid var(--green);
-
 }
 
-.food_price, .food_category {
-	margin:2px;
+.food_price,
+.food_category {
+	margin: 2px;
 	border: 1px solid #fff;
 	color: #fff;
 	padding: 2px 5px;
 	border-radius: 5px;
 	background: var(--green);
-
 }
 .food_desc {
 	color: #707070;
