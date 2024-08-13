@@ -40,7 +40,7 @@ let routes = [
 	{ path: "/hooks", element: <Hooks /> },
 	{ path: "/hocs", element: <Hocs /> },
 	{ path: "/questions", element: <Questions /> },
-	{ path: "/menu", element: <Menu /> },
+	{ path: "/menu", element: <Menu />},
 	{ path: "*", element: <NotFound /> },
 ];
 

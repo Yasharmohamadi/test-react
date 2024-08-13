@@ -1,0 +1,20 @@
+.menu_nav {
+}
+.nav_btn {
+    border: 1px solid #19d288;
+    outline: none;
+    border-radius: 5px;
+    margin-right: 5px !important;
+    background: #fff;
+    color: #19d288;
+    padding: 3px 7px;
+}
+.nav_btn:hover {
+    background: #19d28821;
+    
+}
+.highlight {
+    background: #19d288;
+    color: #fff;
+
+}

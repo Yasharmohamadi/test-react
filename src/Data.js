@@ -86,7 +86,7 @@ export let questionsInfos = [
 	},
 ];
 
-export const menu = [
+export const menuDatas = [
 	{
 		id: 1,
 		title: "buttermilk pancakes",
