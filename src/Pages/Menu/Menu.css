@@ -37,7 +37,6 @@
 .food_right {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 }
 .food_title {
 	color: var(--green);
@@ -47,13 +46,27 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
 }
 .food_img {
 	height: 150px;
 	width: 200px;
 	border-radius: 5px;
 	margin-right: 15px;
+	border: 1px solid var(--green);
+
+}
+
+.food_price {
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 2px 5px;
+	border-radius: 5px;
+	background: var(--green);
+
 }
 .food_desc {
 	color: #707070;
+	text-align: justify;
 }
