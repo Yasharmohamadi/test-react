@@ -12,6 +12,9 @@ const [mainCategory, setMainCategory] = useState('all')
 					variant="outlined"
 					className={category === mainCategory ? `nav_btn highlight` : `nav_btn`}
 					key={index}
+                    onClick={() => {
+                        setMainCategory(category)
+                    }}
 				>
 					{category}
 				</button>
