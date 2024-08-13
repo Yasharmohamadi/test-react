@@ -21,3 +21,39 @@
 .highlight:hover {
 	color: var(--green);
 }
+
+/* foods styles */
+.food_container {
+	cursor: pointer;
+	border: 1px solid var(--green);
+	border-radius: 5px;
+	padding: 20px;
+	margin: 10px 0 0 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.food_right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.food_title {
+	color: var(--green);
+	font-size: 20px;
+}
+.food_header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.food_img {
+	height: 150px;
+	width: 200px;
+	border-radius: 5px;
+	margin-right: 15px;
+}
+.food_desc {
+	color: #707070;
+}
