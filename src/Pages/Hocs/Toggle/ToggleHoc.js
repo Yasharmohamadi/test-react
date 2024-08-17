@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ToggleHoc(OriginalComponent) {
+export default function ToggleHoc(OriginalComponent) {
 	function NewComponent() {
 		const [isShow, setIsShow] = useState(false);
 		const toggleHandler = () => {
@@ -11,5 +11,3 @@ function ToggleHoc(OriginalComponent) {
 
 	return NewComponent;
 }
-
-export default ToggleHoc;

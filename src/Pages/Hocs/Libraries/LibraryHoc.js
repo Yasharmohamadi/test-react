@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function LibraryHoc(OriginalComponent, libraryTitle) {
+export default function LibraryHoc(OriginalComponent, libraryTitle) {
 	function NewComponent() {
 		const [title, setTitle] = useState(libraryTitle);
 
@@ -9,5 +9,3 @@ function LibraryHoc(OriginalComponent, libraryTitle) {
 
 	return NewComponent;
 }
-
-export default LibraryHoc;
