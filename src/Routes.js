@@ -14,6 +14,7 @@ import Hocs from "./Pages/Hocs/Hocs";
 import Questions from "./Pages/Questions/Questions";
 import Menu from "./Pages/Menu/Menu";
 import UseContext from "./Pages/UseContext/UseContext";
+import Alerts from "./Pages/Alerts/Alerts";
 
 let routes = [
 	{ path: "/", element: <Home /> },
@@ -43,6 +44,7 @@ let routes = [
 	{ path: "/questions", element: <Questions /> },
 	{ path: "/menu", element: <Menu />},
 	{ path: "/context", element: <UseContext />},
+	{ path: "/alerts", element: <Alerts />},
 	{ path: "*", element: <NotFound /> },
 ];
 
