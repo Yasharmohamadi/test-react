@@ -8,7 +8,7 @@ export default function FirstFile() {
 	return (
 		<div>
 			<h2>FirstFile : {title}</h2>
-      <SecondFile />
+			<SecondFile />
 		</div>
 	);
 }
