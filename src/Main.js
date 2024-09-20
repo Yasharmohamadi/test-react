@@ -146,6 +146,17 @@ export default function Main() {
 						</Button>
 					</NavLink>
 				</div>
+				<div className="button">
+					<NavLink to="/usereducer">
+						<Button
+							color="primary"
+							variant="contained"
+							// startIcon={}
+						>
+							UseReducer
+						</Button>
+					</NavLink>
+				</div>
 			</div>
 
 			{/* <Routes>

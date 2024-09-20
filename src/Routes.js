@@ -15,6 +15,7 @@ import Questions from "./Pages/Questions/Questions";
 import Menu from "./Pages/Menu/Menu";
 import UseContext from "./Pages/UseContext/UseContext";
 import Alerts from "./Pages/Alerts/Alerts";
+import UseReducer from "./Pages/UseReducer/UseReducer";
 
 let routes = [
 	{ path: "/", element: <Home /> },
@@ -45,6 +46,7 @@ let routes = [
 	{ path: "/menu", element: <Menu />},
 	{ path: "/context", element: <UseContext />},
 	{ path: "/alerts", element: <Alerts />},
+	{ path: "/usereducer", element: <UseReducer />},
 	{ path: "*", element: <NotFound /> },
 ];
 
